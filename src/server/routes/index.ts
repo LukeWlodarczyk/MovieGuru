@@ -1,5 +1,7 @@
 import { ErrorRequestHandler, Request, Response, NextFunction, Application } from "express";
 
+import MovieSchema from '../models/Movie';
+import CommentSchema from '../models/Comment';
 import { Movie } from "./movies";
 import { Comment } from "./comments";
 
@@ -9,6 +11,8 @@ export class Routes {
 
     private movie: Movie = new Movie();
     private comment: Comment = new Comment();
+    private movieModel = MovieSchema;
+    private commentModel = CommentSchema;
 
     private api = (app: Application, version:string) => (endpoint: string) => {
         return app.route(`/api/${version}${endpoint}`)

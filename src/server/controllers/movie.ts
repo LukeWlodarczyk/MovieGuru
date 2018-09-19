@@ -1,7 +1,9 @@
+import mongoose, { Model, Document } from 'mongoose';
 import axios, { AxiosResponse } from 'axios';
 
 import { Request, Response } from 'express';
 
+const Movie = mongoose.model('movies');
 
 
 
