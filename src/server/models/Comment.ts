@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose';
+import * as mongoose from 'mongoose';
 
-const CommentSchema = new Schema({
+const CommentSchema = new mongoose.Schema({
     text: {
         type: String,
         required: true,
@@ -9,8 +9,8 @@ const CommentSchema = new Schema({
         type: String,
         required: true,
     },
-}, 
-{ 
+},
+{
     timestamps: {},
 });
 
