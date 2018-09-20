@@ -1,15 +1,17 @@
 import "babel-polyfill";
 import * as express from "express";
+import * as mongoose from "mongoose";
 
 import { Routes } from "./routes";
-import mongoose from "mongoose";
+
+const keys = require('../config/keys')
 
 
 class App {
 
     public app: express.Application;
     private routes: Routes = new Routes();
-    private mongoUrl: string = 'mongodb://Luke:LukeLuke1@ds259742.mlab.com:59742/movieguru-dev';
+    private mongoUrl: string = keys.mongoURI;
 
     constructor() {
         this.app = express();
