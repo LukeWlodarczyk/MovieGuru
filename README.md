@@ -3,6 +3,7 @@
 
 ## Technologies
 
+- TypeScript
 - Express
 - Mongoose
 - React
@@ -86,3 +87,7 @@ http://localhost:3000/api/v1
  ##### POST /comments
 
  Add comment to our db (movieId and text in body required)
+
+### Tests
+
+Unfortunately, when I  refactored my controllers to use async await, my tests does't work properly and I'm not sure how to fix it :/
