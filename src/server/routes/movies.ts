@@ -1,4 +1,5 @@
 import { MovieController } from "../controllers/movie";
+import { catchErrors } from '../helpers';
 
 export class Movie {
 
@@ -7,8 +8,8 @@ export class Movie {
     public routes({ apiv1, apiv2 }): void {
 
         apiv1('/movies')
-            .get(this.movieController.getMovies)
-            .post(this.movieController.addMovie)
+            .get(catchErrors(this.movieController.getMovies))
+            .post(catchErrors(this.movieController.addMovie))
 
 
     }

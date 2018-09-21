@@ -1,4 +1,5 @@
 import { CommentController } from "../controllers/comment";
+import { catchErrors } from '../helpers';
 
 export class Comment {
 
@@ -7,8 +8,8 @@ export class Comment {
     public routes({ apiv1, apiv2 }): void {
 
         apiv1('/comments')
-            .get(this.commentController.getComments)
-            .post(this.commentController.addComment)
+            .get(catchErrors(this.commentController.getComments))
+            .post(catchErrors(this.commentController.addComment))
 
 
     }

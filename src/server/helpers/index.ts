@@ -3,3 +3,4 @@ export * from './makeComparisonOpts';
 export * from './makeInArrayOpts';
 export * from './makeRegExpOpts';
 export * from './createOpts';
+export * from './catchErrors';
