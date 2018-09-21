@@ -5,7 +5,7 @@ import * as mongoose from "mongoose";
 import { Routes } from "./routes";
 import ssr from "./controllers/ssr";
 
-const keys = require('../config/keys')
+const keys = require('../config/keys');
 
 class App {
 

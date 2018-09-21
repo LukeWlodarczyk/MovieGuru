@@ -35,7 +35,6 @@ export class CommentController{
     public addComment =  async (req: Request, res: Response) => {
 
       if(!req.body.movieId) {
-        console.log('asdasd')
           return res
                   .status(400)
                   .json({

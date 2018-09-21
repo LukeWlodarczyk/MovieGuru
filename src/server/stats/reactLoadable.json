@@ -249,7 +249,7 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "../actions/api": [
+  "./api": [
     {
       "id": "./src/universal/actions/api.ts",
       "name": "./src/universal/actions/api.ts",
@@ -3861,7 +3861,7 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./es6.set": [
+  "./modules/es6.set": [
     {
       "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.set.js",
       "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.set.js",
