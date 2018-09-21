@@ -1,3 +1,3 @@
 module.exports = {
-  mongoURI: 'mongodb://Luke:LukeLuke1@ds259742.mlab.com:59742/movieguru-dev',
+  mongoURI: 'mongodb://testuser:Test12345@ds263172.mlab.com:63172/movieguru-test',
 };
