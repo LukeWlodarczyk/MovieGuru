@@ -34,7 +34,8 @@ export class CommentController{
 
     public addComment =  async (req: Request, res: Response) => {
 
-      if(!req.body.id) {
+      if(!req.body.movieId) {
+        console.log('asdasd')
           return res
                   .status(400)
                   .json({
@@ -44,7 +45,17 @@ export class CommentController{
                   });
       }
 
-      const id: string = req.body.id;
+      if(!req.body.text || req.body.text.length < 3) {
+          return res
+                  .status(400)
+                  .json({
+                    success: false,
+                    data: null,
+                    message: 'Request body should contain text at least 3 characters long.'
+                  });
+      }
+
+      const id: string = req.body.movieId;
 
       const isValidId = mongoose.Types.ObjectId.isValid(id);
 
