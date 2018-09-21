@@ -1,4 +1,4 @@
-import { ErrorRequestHandler, Request, Response, NextFunction, Application } from "express";
+import { Request, Response, NextFunction, Application } from "express";
 
 import MovieSchema from '../models/Movie';
 import CommentSchema from '../models/Comment';
@@ -35,12 +35,21 @@ export class Routes {
 
        app.route('/api/*')
         .all((req: Request, res: Response) => {
-            res.status(400).json({ success: false, message: 'Invalid url'})
+            res
+              .status(400)
+              .json({
+                success: false,
+                message: 'Invalid url'
+              })
         })
 
-        app.use((err: ErrorRequestHandler, req: Request, res: Response, next: NextFunction) => {
-
-            res.status(400).json({ success: false, data: null, message: `Error occured: ${err}` })
+        app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+            return res
+                    .status(400)
+                    .json({
+                      success: false,
+                      data: null,
+                      message: `Error occured: ${err}` })
         })
 
     }
