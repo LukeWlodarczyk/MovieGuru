@@ -1,11 +1,11 @@
 import * as mongoose from 'mongoose';
 import axios, { AxiosResponse } from 'axios';
-
 import { Request, Response } from 'express';
 
-const Movie = mongoose.model('movies');
+import { prepareDataToSave, createOpts  } from '../helpers';
 
-import { prepareDataToSave  } from '../helpers';
+
+const Movie = mongoose.model('movies');
 
 const baseUrl: string = 'http://www.omdbapi.com';
 const apiKey: string = '?apikey=e01a9718';
@@ -15,9 +15,16 @@ export class MovieController{
 
     public getMovies = async (req: Request, res: Response) => {
 
-      const movies: object[] = await Movie.find({});
+      const opts = createOpts(req.query);
+      const movies: object[] = await Movie.find(opts);
 
-      return res.status(200).json({ success: true, data: movies, message: 'All movies successfully fetched.' });
+      return res
+              .status(200)
+              .json({
+                success: true,
+                data: movies,
+                message: 'Movies successfully fetched.'
+              });
     }
 
     public addMovie = async (req: Request, res: Response) => {
@@ -54,7 +61,7 @@ export class MovieController{
                  });
      }
 
-      const movie: object = await Movie.findOne({ imdbID: resp.data.imdbID });
+      const movie = await Movie.findOne({ imdbID: resp.data.imdbID });
 
       if(movie) {
           return res
