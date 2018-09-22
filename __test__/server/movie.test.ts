@@ -2,10 +2,18 @@ import * as app from '../../src/server/app';
 import * as chai from 'chai';
 import 'mocha';
 
+import * as mongoose from 'mongoose'
+
 const chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 const expect = chai.expect;
+
+const Movie = mongoose.model('movies')
+
+before( async ()=>{
+  await Movie.remove({})
+})
 
 describe('GET /api/v1/movies', () => {
 
@@ -35,7 +43,7 @@ describe('GET /api/v1/movies', () => {
 
 
 describe('POST /api/v1/movies', () => {
-
+  
   it('should add new movie to db', (done) => {
     chai
       .request(app.default)

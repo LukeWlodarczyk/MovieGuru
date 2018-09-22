@@ -1,11 +1,19 @@
 import * as app from '../../src/server/app';
 import * as chai from 'chai';
 import 'mocha';
+import * as mongoose from 'mongoose';
 const chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 const expect = chai.expect;
 
+const Movie = mongoose.model('movies');
+const Comment = mongoose.model('comments');
+
+before( async ()=>{
+  await Movie.remove({})
+  await Comment.remove({})
+})
 
 describe('GET /api/v1/comments', () => {
 
@@ -71,6 +79,25 @@ describe('POST /api/v1/comments', () => {
          chai.expect(res.body.message).to.eql('Movie with provided id does not exist. You cannot add comment to nonexistent movie.');
          done()
        });
+  })
+
+  it('should add comment to movie', (done) => {
+
+    Movie.create({}).then(movie=> {
+      chai
+        .request(app.default)
+        .post('/api/v1/comments')
+        .send({ text: 'Awsome', movieId: movie.id })
+        .end((err, res) => {
+           chai.expect(res.status).to.eql(201);
+           chai.expect(res.body.success).to.eql(true);
+           chai.expect(res.body.message).to.eql('Comment successfully created.');
+           chai.expect(res.body.data.movieId).to.eql(movie.id);
+           done()
+         });
+      })
+
+
   })
 
 
