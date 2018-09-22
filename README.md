@@ -90,4 +90,21 @@ http://localhost:3000/api/v1
 
 ### Tests
 
-Unfortunately, when I  refactored my controllers to use async await, my tests does't work properly and I'm not sure how to fix it :/
+```sh
+$ npm run test
+```
+
+I have some weird bug and I have to comment
+
+```
+import ssr from './controllers/ssr'
+
+this.ssr()
+
+private ssr(): void{
+   this.app.use(ssr);
+}
+```
+
+in src/server/app.ts file in order to make test work correctly.
+I 'm not sure how to fix it. Sorry for that :/
