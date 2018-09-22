@@ -29,13 +29,14 @@ export class MovieController{
 
     public addMovie = async (req: Request, res: Response) => {
 
+
       if(!req.body.title) {
          return res
                   .status(400)
                   .json({
                     success: false,
                     data: null,
-                    message: 'Request body should contain movie title'
+                    message: 'Request body should contain movie title.'
                   });
      }
 
@@ -86,5 +87,41 @@ export class MovieController{
 
     }
 
+    public getMovie = async (req: Request, res: Response) => {
 
+      const id = req.params.id;
+
+      const isValidId = mongoose.Types.ObjectId.isValid(id);
+
+      if(!isValidId) {
+        return res
+                .status(400)
+                .json({
+                  success: false,
+                  data: null,
+                  message: 'Provided id is not valid.'
+                });
+      }
+
+      const movie = await Movie.findById(id);
+
+      if(!movie) {
+        return res
+                .status(404)
+                .json({
+                  success: false,
+                  data: null,
+                  message: 'Movie with provided id does not exist.'
+                });
+      }
+
+      res
+        .status(200)
+        .json({
+            success: true,
+            data: movie,
+            message: 'Movie successfully fetched from db',
+        })
+
+    }
 }
