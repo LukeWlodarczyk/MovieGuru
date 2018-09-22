@@ -40,17 +40,17 @@ http://localhost:3000/api/v1
 
  Return movies in db
 ###### Available filter parameter
- - title ( /movies?title=Fight_Club )
- - runtime ( /movies?runtime[gt]=120&runtime[lt]=150 )
- - year ( /movies?year[gte]=2000&year[lt]=2005 )
- - imdbVotes ( /movies?imdbVotes[gte]=20000 )
- - imdbRating ( /movies?imdbRating[gte]=8 )
- - genre ( /movies?genre=Drama,Comedy )
- - director ( /movies?director=Joss_Whedon,Eric_Dalton )
- - language ( /movies?language=English,German )
- - country ( /movies?country=England,Australia )
- - actors ( /movies?director=Tom_Crouse,Ed_Harris )
- - writer ( /movies?director=Joss_Whedon,Zak_Penn )
+ - title ( `/movies?title=Fight_Club` )
+ - runtime ( `/movies?runtime[gt]=120&runtime[lt]=150` )
+ - year ( `/movies?year[gte]=2000&year[lt]=2005` )
+ - imdbVotes ( `/movies?imdbVotes[gte]=20000` )
+ - imdbRating ( `/movies?imdbRating[gte]=8` )
+ - genre ( `/movies?genre=Drama,Comedy` )
+ - director ( `/movies?director=Joss_Whedon,Eric_Dalton` )
+ - language ( `/movies?language=English,German` )
+ - country ( `/movies?country=England,Australia` )
+ - actors ( `/movies?director=Tom_Crouse,Ed_Harris` )
+ - writer ( `/movies?director=Joss_Whedon,Zak_Penn` )
 
 
  ###### Example
