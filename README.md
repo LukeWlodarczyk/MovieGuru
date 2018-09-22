@@ -106,5 +106,5 @@ private ssr(): void{
 }
 ```
 
-in src/server/app.ts file in order to make test work correctly.
+in `src/server/app.ts` file in order to make test work correctly.
 I 'm not sure how to fix it. Sorry for that :/
