@@ -1,7 +1,7 @@
 import * as app from '../../src/server/app';
 import * as chai from 'chai';
-import chaiHttp = require('chai-http');
 import 'mocha';
+const chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -32,7 +32,7 @@ describe('POST /api/v1/comments', () => {
       .send({ text: 'Awsome' })
       .end((err, res) => {
          chai.expect(res.status).to.eql(400);
-         chai.expect(res.body.data.message).to.eql('Request body should contain movie id.');
+         chai.expect(res.body.message).to.eql('Request body should contain movie id.');
          done()
        });
   })
@@ -44,7 +44,7 @@ describe('POST /api/v1/comments', () => {
       .send({ text: 'Awsome', movieId: 'asdq' })
       .end((err, res) => {
          chai.expect(res.status).to.eql(400);
-         chai.expect(res.body.data.message).to.eql('Provided id is not valid.');
+         chai.expect(res.body.message).to.eql('Provided id is not valid.');
          done()
        });
   })
@@ -56,7 +56,7 @@ describe('POST /api/v1/comments', () => {
       .send({ text: '', movieId: '5ba4304f6cccb81a9ebc6bdb' })
       .end((err, res) => {
          chai.expect(res.status).to.eql(400);
-         chai.expect(res.body.data.message).to.eql('Request body should contain text at least 3 characters long.');
+         chai.expect(res.body.message).to.eql('Request body should contain text at least 3 characters long.');
          done()
        });
   })
