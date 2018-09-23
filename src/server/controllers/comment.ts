@@ -7,13 +7,15 @@ import { Request, Response } from 'express';
 const Comment = mongoose.model('comments');
 const Movie = mongoose.model('movies');
 
+import { validateComment } from '../validation';
+
 interface Opts {
   id?: string
 }
 
 export class CommentController{
 
-    public getComments = async (req: Request, res: Response) => {
+    public getComments = async (req: Request, res: Response):Promise<Response> => {
       const opts: Opts = req.query;
 
       for(const key in opts) {
@@ -32,42 +34,21 @@ export class CommentController{
 
     }
 
-    public addComment =  async (req: Request, res: Response) => {
+    public addComment =  async (req: Request, res: Response):Promise<Response> => {
 
-      if(!req.body.movieId) {
-          return res
-                  .status(400)
-                  .json({
-                    success: false,
-                    data: null,
-                    message: 'Request body should contain movie id.'
-                  });
-      }
+      const { errors, isValid } = validateComment(req.body);
 
-      if(!req.body.text || req.body.text.length < 3) {
-          return res
-                  .status(400)
-                  .json({
-                    success: false,
-                    data: null,
-                    message: 'Request body should contain text at least 3 characters long.'
-                  });
+      if (!isValid) {
+        return res
+                .status(400)
+                .json({
+                  success: false,
+                  data: errors,
+                  message: 'Validation failed. Check data property for more details.'
+                })
       }
 
       const id: string = req.body.movieId;
-
-      const isValidId = mongoose.Types.ObjectId.isValid(id);
-
-      if(!isValidId) {
-          return res
-                  .status(400)
-                  .json({
-                    success: false,
-                    data: null,
-                    message: 'Provided id is not valid.'
-                  });
-      }
-
       const movie = await Movie.findById(id);
 
       if(!movie) {
