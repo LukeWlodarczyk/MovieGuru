@@ -8,6 +8,7 @@
 - Mongoose
 - React
 - React Redux
+- React Helmet
 - React Loadable
 
 ### Instalation
@@ -38,8 +39,8 @@ http://localhost:3000/api/v1
 
 ##### GET /movies
 
- Return movies in db
-###### Available filter parameter
+ Return movies from db
+###### Available filter parameters
  - title ( `/movies?title=Fight_Club` )
  - runtime ( `/movies?runtime[gt]=120&runtime[lt]=150` )
  - year ( `/movies?year[gte]=2000&year[lt]=2005` )
@@ -49,8 +50,8 @@ http://localhost:3000/api/v1
  - director ( `/movies?director=Joss_Whedon,Eric_Dalton` )
  - language ( `/movies?language=English,German` )
  - country ( `/movies?country=England,Australia` )
- - actors ( `/movies?director=Tom_Crouse,Ed_Harris` )
- - writer ( `/movies?director=Joss_Whedon,Zak_Penn` )
+ - actors ( `/movies?actors=Tom_Crouse,Ed_Harris` )
+ - writer ( `/movies?writer=Joss_Whedon,Zak_Penn` )
 
 
  ###### Example
