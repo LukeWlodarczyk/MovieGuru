@@ -3,10 +3,10 @@ export const makeComparisonOpts = (filterObj: object, optsName: string) => {
         return {}
     }
 
-    const comaprisonProps = ['gt', 'gte', 'lt', 'lte'];
+    const comaprisonProps:string[] = ['gt', 'gte', 'lt', 'lte'];
 
     return Object.keys(filterObj).reduce((obj, key) => {
-        if(comaprisonProps.includes(key)) {
+        if(~comaprisonProps.indexOf(key)) {
             obj[optsName]['$'+key] = filterObj[key];
         }
         return obj

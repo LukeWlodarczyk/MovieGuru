@@ -21,15 +21,15 @@ export const createOpts = (queryData: Query) => {
 
   return Object.keys(queryData).reduce((obj, k) => {
 
-    if(regExpProps.includes(k)) {
+    if(~regExpProps.indexOf(k)) {
       return obj = { ...obj, ...makeRegExpOpts(queryData[k], k) };
     }
 
-    if(comparisonProps.includes(k)) {
+    if(~comparisonProps.indexOf(k)) {
       return obj = { ...obj, ...makeComparisonOpts(queryData[k], k) }
     }
 
-    if(inArrayProps.includes(k)) {
+    if(~inArrayProps.indexOf(k)) {
       return obj = { ...obj, ...makeInArrayOpts(queryData[k], k) };
     }
 
