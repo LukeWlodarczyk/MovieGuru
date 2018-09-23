@@ -11,9 +11,10 @@ const expect = chai.expect;
 
 const Movie = mongoose.model('movies')
 
-before( async ()=>{
+beforeEach( async ()=>{
   await Movie.deleteMany({})
 })
+
 
 describe('GET /api/v1/movies', () => {
 
@@ -101,13 +102,63 @@ describe('GET /api/v1/movies?filters', () => {
              expect(res.status).to.eql(200);
              expect(res.body.data).to.be.an('array');
              expect(res.body.data).to.have.lengthOf(3);
-             expect(res.body.data[0].genre).to.include('Fantasy');
-             expect(res.body.data[1].genre).to.include('Horror');
-             expect(res.body.data[2].genre).to.include('Horror');
              done()
            });
       })
   })
+
+  it('should return movies sorted by runtime descending(default)', (done) => {
+
+    const promises = [
+      Movie.create({ runtime: 35}),
+      Movie.create({ runtime: 120}),
+      Movie.create({ runtime: 189}),
+      Movie.create({ runtime: 65}),
+    ]
+
+    Promise
+      .all(promises)
+      .then(() => {
+        chai
+          .request(app.default)
+          .get('/api/v1/movies?sort_by=runtime')
+          .end((err, res) => {
+             expect(res.status).to.eql(200);
+             expect(res.body.data[0].runtime).to.be.at.least(res.body.data[1].runtime);
+             expect(res.body.data[1].runtime).to.be.at.least(res.body.data[2].runtime);
+             expect(res.body.data[2].runtime).to.be.at.least(res.body.data[3].runtime);
+             done()
+           });
+      })
+
+    })
+
+
+    it('should return movies sorted by boxOffice ascending', (done) => {
+
+      const promises = [
+        Movie.create({ boxOffice: 3000000}),
+        Movie.create({ boxOffice: 600000000}),
+        Movie.create({ boxOffice: 1345000}),
+        Movie.create({ boxOffice: 3000000}),
+      ]
+
+      Promise
+        .all(promises)
+        .then(() => {
+          chai
+            .request(app.default)
+            .get('/api/v1/movies?sort_by=boxOffice&order_by=ascending')
+            .end((err, res) => {
+               expect(res.status).to.eql(200);
+               expect(res.body.data[0].boxOffice).to.be.at.most(res.body.data[1].boxOffice);
+               expect(res.body.data[1].boxOffice).to.be.at.most(res.body.data[2].boxOffice);
+               expect(res.body.data[2].boxOffice).to.be.at.most(res.body.data[3].boxOffice);
+               done()
+             });
+        })
+
+      })
 
 })
 
