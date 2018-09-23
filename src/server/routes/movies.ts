@@ -1,6 +1,6 @@
 import { MovieController } from "../controllers/movie";
 import { catchErrors } from '../helpers';
-import { getFilters } from '../middlewares'
+import { parseMoviesQuery } from '../middlewares'
 
 export class Movie {
 
@@ -9,7 +9,7 @@ export class Movie {
     public routes({ apiv1, apiv2 }): void {
 
         apiv1('/movies')
-            .get(getFilters, catchErrors(this.movieController.getMovies))
+            .get(parseMoviesQuery, catchErrors(this.movieController.getMovies))
             .post(catchErrors(this.movieController.addMovie))
 
         apiv1('/movies/:id')

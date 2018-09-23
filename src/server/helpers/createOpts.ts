@@ -16,7 +16,7 @@ interface Query {
 
 export const createOpts = (queryData: Query) => {
   const regExpProps: string[] = ['title'];
-  const comparisonProps: string[] = ['runtime', 'year', 'imdbVotes', 'imdbRating'];
+  const comparisonProps: string[] = ['runtime', 'year', 'imdbVotes', 'imdbRating', 'boxOffice'];
   const inArrayProps: string[] = ['director', 'genre', 'language', 'country', 'actors', 'writer' ];
 
   return Object.keys(queryData).reduce((obj, k) => {
