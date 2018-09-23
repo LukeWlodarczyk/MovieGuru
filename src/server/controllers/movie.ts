@@ -2,7 +2,8 @@ import * as mongoose from 'mongoose';
 import axios, { AxiosResponse } from 'axios';
 import { Request, Response } from 'express';
 
-import { prepareDataToSave, createOpts  } from '../helpers';
+import { prepareDataToSave  } from '../helpers';
+import { ReqWithFilers } from '../middlewares'
 
 
 const Movie = mongoose.model('movies');
@@ -13,10 +14,13 @@ const apiKey: string = '?apikey=e01a9718';
 
 export class MovieController{
 
-    public getMovies = async (req: Request, res: Response) => {
+    public getMovies = async (req: ReqWithFilers, res: Response):Promise<Response> => {
 
-      const opts = createOpts(req.query);
-      const movies: object[] = await Movie.find(opts);
+
+      const movies: object[] = await Movie
+                                        .find(req.filters)
+
+
 
       return res
               .status(200)
@@ -27,7 +31,7 @@ export class MovieController{
               });
     }
 
-    public addMovie = async (req: Request, res: Response) => {
+    public addMovie = async (req: Request, res: Response):Promise<Response> => {
 
 
       if(!req.body.title) {
@@ -87,11 +91,11 @@ export class MovieController{
 
     }
 
-    public getMovie = async (req: Request, res: Response) => {
+    public getMovie = async (req: Request, res: Response):Promise<Response> => {
 
-      const id = req.params.id;
+      const id:string = req.params.id;
 
-      const isValidId = mongoose.Types.ObjectId.isValid(id);
+      const isValidId:boolean = mongoose.Types.ObjectId.isValid(id);
 
       if(!isValidId) {
         return res
@@ -115,13 +119,12 @@ export class MovieController{
                 });
       }
 
-      res
-        .status(200)
-        .json({
-            success: true,
-            data: movie,
-            message: 'Movie successfully fetched from db',
-        })
-
+      return res
+              .status(200)
+              .json({
+                  success: true,
+                  data: movie,
+                  message: 'Movie successfully fetched from db',
+              })
     }
 }
