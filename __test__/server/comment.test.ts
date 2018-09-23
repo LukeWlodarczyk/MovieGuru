@@ -65,7 +65,7 @@ describe('POST /api/v1/comments', () => {
       .end((err, res) => {
          expect(res.status).to.eql(400);
          expect(res.body.success).to.be.false;
-         expect(res.body.message).to.eql('Request body should contain movie id.');
+         expect(res.body.message).to.eql('Validation failed. Check data property for more details.');
          done()
        });
   })
@@ -78,7 +78,7 @@ describe('POST /api/v1/comments', () => {
       .end((err, res) => {
          expect(res.status).to.eql(400);
          expect(res.body.success).to.be.false;
-         expect(res.body.message).to.eql('Provided id is not valid.');
+         expect(res.body.message).to.eql('Validation failed. Check data property for more details.');
          done()
        });
   })
@@ -91,7 +91,7 @@ describe('POST /api/v1/comments', () => {
       .end((err, res) => {
          expect(res.status).to.eql(400);
          expect(res.body.success).to.be.false;
-         expect(res.body.message).to.eql('Request body should contain text at least 3 characters long.');
+         expect(res.body.message).to.eql('Validation failed. Check data property for more details.');
          done()
        });
   })
