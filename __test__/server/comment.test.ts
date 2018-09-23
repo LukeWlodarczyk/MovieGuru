@@ -43,14 +43,15 @@ describe('GET /api/v1/comments', () => {
           .request(app.default)
           .get('/api/v1/comments/?movieId=5ba4304f6cccb81a9ebc6bdb')
           .end((err, res) => {
-             chai.expect(res.status).to.eql(200);
+             expect(res.status).to.eql(200);
              expect(res.body.data).to.be.an('array');
-             expect(res.body.data.length).to.be.eql(2);
+             expect(res.body.data[0].movieId).to.be.eql('5ba4304f6cccb81a9ebc6bdb');
+             expect(res.body.data[1].movieId).to.be.eql('5ba4304f6cccb81a9ebc6bdb');
+             expect(res.body.data).to.have.lengthOf(2);
              done()
            });
       })
   })
-
 
 })
 
@@ -62,9 +63,9 @@ describe('POST /api/v1/comments', () => {
       .post('/api/v1/comments')
       .send({ text: 'Awsome' })
       .end((err, res) => {
-         chai.expect(res.status).to.eql(400);
-         chai.expect(res.body.success).to.eql(false);
-         chai.expect(res.body.message).to.eql('Request body should contain movie id.');
+         expect(res.status).to.eql(400);
+         expect(res.body.success).to.be.false;
+         expect(res.body.message).to.eql('Request body should contain movie id.');
          done()
        });
   })
@@ -75,9 +76,9 @@ describe('POST /api/v1/comments', () => {
       .post('/api/v1/comments')
       .send({ text: 'Awsome', movieId: 'asdq' })
       .end((err, res) => {
-         chai.expect(res.status).to.eql(400);
-         chai.expect(res.body.success).to.eql(false);
-         chai.expect(res.body.message).to.eql('Provided id is not valid.');
+         expect(res.status).to.eql(400);
+         expect(res.body.success).to.be.false;
+         expect(res.body.message).to.eql('Provided id is not valid.');
          done()
        });
   })
@@ -88,9 +89,9 @@ describe('POST /api/v1/comments', () => {
       .post('/api/v1/comments')
       .send({ text: '', movieId: '5ba4304f6cccb81a9ebc6bdb' })
       .end((err, res) => {
-         chai.expect(res.status).to.eql(400);
-         chai.expect(res.body.success).to.eql(false);
-         chai.expect(res.body.message).to.eql('Request body should contain text at least 3 characters long.');
+         expect(res.status).to.eql(400);
+         expect(res.body.success).to.be.false;
+         expect(res.body.message).to.eql('Request body should contain text at least 3 characters long.');
          done()
        });
   })
@@ -101,9 +102,9 @@ describe('POST /api/v1/comments', () => {
       .post('/api/v1/comments')
       .send({ text: 'Awsome', movieId: '5ba4304f6cccb81a9ebc6bdb' })
       .end((err, res) => {
-         chai.expect(res.status).to.eql(404);
-         chai.expect(res.body.success).to.eql(false);
-         chai.expect(res.body.message).to.eql('Movie with provided id does not exist. You cannot add comment to nonexistent movie.');
+         expect(res.status).to.eql(404);
+         expect(res.body.success).to.be.false;
+         expect(res.body.message).to.eql('Movie with provided id does not exist. You cannot add comment to nonexistent movie.');
          done()
        });
   })
@@ -112,16 +113,17 @@ describe('POST /api/v1/comments', () => {
 
     Movie
       .create({})
-      .then(movie=> {
+      .then(movie => {
         chai
           .request(app.default)
           .post('/api/v1/comments')
           .send({ text: 'Awsome', movieId: movie.id })
           .end((err, res) => {
-             chai.expect(res.status).to.eql(201);
-             chai.expect(res.body.success).to.eql(true);
-             chai.expect(res.body.message).to.eql('Comment successfully created.');
-             chai.expect(res.body.data.movieId).to.eql(movie.id);
+             expect(res.status).to.eql(201);
+             expect(res.body.success).to.be.true;
+             expect(res.body.message).to.eql('Comment successfully created.');
+             expect(res.body.data.text).to.eql('Awsome');
+             expect(res.body.data.movieId).to.eql(movie.id);
              done()
            });
       })
