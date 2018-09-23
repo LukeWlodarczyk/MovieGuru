@@ -41,7 +41,7 @@ const MovieSchema = new mongoose.Schema({
         type: String,
     },
     boxOffice: {
-        type: String,
+        type: Number,
     },
     metascore: {
         type: String,

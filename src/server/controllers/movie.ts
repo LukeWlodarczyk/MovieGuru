@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from 'axios';
 import { Request, Response } from 'express';
 
 import { prepareDataToSave  } from '../helpers';
-import { ReqWithFilers } from '../middlewares'
+import { GetMoviesReq } from '../middlewares'
 
 
 const Movie = mongoose.model('movies');
@@ -14,12 +14,13 @@ const apiKey: string = '?apikey=e01a9718';
 
 export class MovieController{
 
-    public getMovies = async (req: ReqWithFilers, res: Response):Promise<Response> => {
+    public getMovies = async (req: GetMoviesReq, res: Response):Promise<Response> => {
 
       const movies: object[] = await Movie
                                         .find(req.filters)
                                         .skip(req.pagination.offset)
                                         .limit(req.pagination.per_page)
+                                        .sort(req.sort_by)
 
 
       return res

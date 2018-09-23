@@ -7,7 +7,7 @@ export const prepareDataToSave = (input: object) => {
         const newKey = key !== 'DVD' ? key.charAt(0).toLowerCase() + key.slice(1) : key.toLowerCase();
         newObj[newKey] = newVal;
 
-      if(~['runtime','year','imdbVotes', 'imdbRating'].indexOf(newKey)) newObj[newKey] = Number(newObj[newKey]) || 0;
+      if(~['runtime','year','imdbVotes', 'imdbRating', 'boxOffice'].indexOf(newKey)) newObj[newKey] = Number(newObj[newKey].replace(/[^\d.-]/g, '')) || 0;
 
 
         const props = ['director', 'writer', 'actors', 'genre', 'country', 'language'];

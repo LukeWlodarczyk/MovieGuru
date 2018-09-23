@@ -1,1 +1,1 @@
-export * from './getFilters';
+export * from './parseMoviesQuery';
