@@ -3,12 +3,12 @@ import { Request, Response, NextFunction } from 'express';
 import { createOpts  } from '../helpers';
 
 export interface GetMoviesReq extends Request {
-  filters?: object,
-  pagination?: {
+  filters: object,
+  pagination: {
     offset: number,
     per_page: number
   },
-  sort_by?: {
+  sort_by: {
     [key: string]: string
   }
 
