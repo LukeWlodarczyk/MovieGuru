@@ -14,9 +14,6 @@ export const validateComment = data => {
   data.text = !isEmpty(data.text) ? data.text : '';
   data.movieId = !isEmpty(data.movieId) ? data.movieId : '';
 
-  console.log(data.text)
-
-
   if (!Validator.isLength(data.text, { min: 5, max: 60 })) {
     errors.text = 'Text must be between 5 and 60 characters';
   }

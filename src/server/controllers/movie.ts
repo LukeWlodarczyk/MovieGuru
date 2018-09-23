@@ -3,7 +3,9 @@ import axios, { AxiosResponse } from 'axios';
 import { Request, Response } from 'express';
 
 import { prepareDataToSave  } from '../helpers';
-import { GetMoviesReq } from '../middlewares'
+import { GetMoviesReq } from '../middlewares';
+
+import { validateMovieTitle } from '../validation';
 
 
 const Movie = mongoose.model('movies');
@@ -34,26 +36,17 @@ export class MovieController{
 
     public addMovie = async (req: Request, res: Response):Promise<Response> => {
 
+      const { errors, isValid } = validateMovieTitle(req.body);
 
-      if(!req.body.title) {
-         return res
-                  .status(400)
-                  .json({
-                    success: false,
-                    data: null,
-                    message: 'Request body should contain movie title.'
-                  });
-     }
-
-     if(req.body.title.length < 3) {
+      if (!isValid) {
         return res
-                 .status(400)
-                 .json({
-                   success: false,
-                   data: null,
-                   message: 'Title should be at least 3 characters long.'
-                 });
-    }
+                .status(400)
+                .json({
+                  success: false,
+                  data: errors,
+                  message: 'Validation failed. Check data property for more details.'
+                })
+      }
 
      const resp: AxiosResponse = await axios.get(`${baseUrl}/${apiKey}&type=movie&t=${req.body.title.replace(' ', '_')}`);
 
