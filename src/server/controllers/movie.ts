@@ -16,10 +16,10 @@ export class MovieController{
 
     public getMovies = async (req: ReqWithFilers, res: Response):Promise<Response> => {
 
-
       const movies: object[] = await Movie
                                         .find(req.filters)
-
+                                        .skip(req.pagination.offset)
+                                        .limit(req.pagination.per_page)
 
 
       return res
