@@ -18,7 +18,7 @@ import { IState } from '../../universal/models/state'
 const stats = require("../stats/reactLoadable.json");
 
 interface IRouteConfig extends RouteConfig {
-  fetchData?: (dispatch) => Promise<any>
+  fetchData?: (dispatch, param) => Promise<any>
 }
 
 export default async (req: Request, res: Response) => {
@@ -28,7 +28,7 @@ export default async (req: Request, res: Response) => {
 	const promises: any = matchRoutes<any>(routes, req.path)
 		.map(({ route }: { route: IRouteConfig}) => {
       const { fetchData } = route;
-			return fetchData ? fetchData(dispatch) : null;
+			return fetchData ? fetchData(dispatch, req.path.split('/').pop()) : null;
 		})
 		.map(promise => {
 			if (promise) {
