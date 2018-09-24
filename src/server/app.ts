@@ -3,7 +3,8 @@ import * as express from "express";
 import * as mongoose from "mongoose";
 
 import { Routes } from "./routes";
-import ssr from "./controllers/ssr";
+
+import ssr from './controllers/ssr'
 
 const keys = require('../config/keys');
 
@@ -18,7 +19,7 @@ class App {
         this.mongoSetup();
         this.config();
         this.routes.init(this.app);
-        this.ssr();
+        this.ssr()
     }
 
     private config(): void{
@@ -36,9 +37,10 @@ class App {
             .catch(err => console.log(`Mongoose error: ${err}`))
     }
 
-    private ssr(): void {
-      this.app.use(ssr);
+    private ssr(): void{
+        this.app.use(ssr);
     }
+
 }
 
 export default new App().app;

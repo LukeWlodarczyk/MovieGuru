@@ -1,28 +1,28 @@
 {
-  "../pages/home": [
+  "../pages/addMovie": [
     {
-      "id": "./src/universal/pages/home/index.tsx",
-      "name": "./src/universal/pages/home/index.tsx",
-      "file": "home.js",
-      "publicPath": "/static/js/home.js"
+      "id": "./src/universal/pages/addMovie/index.tsx",
+      "name": "./src/universal/pages/addMovie/index.tsx",
+      "file": "addMovie.js",
+      "publicPath": "/static/js/addMovie.js"
     },
     {
-      "id": "./src/universal/pages/home/index.tsx",
-      "name": "./src/universal/pages/home/index.tsx",
-      "file": "home.js.map",
-      "publicPath": "/static/js/home.js.map"
+      "id": "./src/universal/pages/addMovie/index.tsx",
+      "name": "./src/universal/pages/addMovie/index.tsx",
+      "file": "addMovie.js.map",
+      "publicPath": "/static/js/addMovie.js.map"
     }
   ],
-  "./modules/es6.string.fontsize": [
+  "./modules/es6.string.ends-with": [
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -125,16 +125,16 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "../universal/app": [
+  "react-router-config": [
     {
-      "id": "./src/universal/app/index.tsx",
-      "name": "./src/universal/app/index.tsx",
+      "id": "./node_modules/react-router-config/es/index.js",
+      "name": "./node_modules/react-router-config/es/index.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/app/index.tsx",
-      "name": "./src/universal/app/index.tsx",
+      "id": "./node_modules/react-router-config/es/index.js",
+      "name": "./node_modules/react-router-config/es/index.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -149,6 +149,448 @@
     {
       "id": "./src/universal/Store.ts",
       "name": "./src/universal/Store.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "../universal/Routes": [
+    {
+      "id": "./src/universal/Routes.ts",
+      "name": "./src/universal/Routes.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/Routes.ts",
+      "name": "./src/universal/Routes.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./app": [
+    {
+      "id": "./src/universal/app/index.tsx",
+      "name": "./src/universal/app/index.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/app/index.tsx",
+      "name": "./src/universal/app/index.tsx",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./loadable": [
+    {
+      "id": "./src/universal/loadable/index.tsx",
+      "name": "./src/universal/loadable/index.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/loadable/index.tsx",
+      "name": "./src/universal/loadable/index.tsx",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./pages/home": [
+    {
+      "id": "./src/universal/pages/home/index.tsx",
+      "name": "./src/universal/pages/home/index.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/pages/home/index.tsx",
+      "name": "./src/universal/pages/home/index.tsx",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "react-helmet": [
+    {
+      "id": "./node_modules/react-helmet/lib/Helmet.js",
+      "name": "./node_modules/react-helmet/lib/Helmet.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/lib/Helmet.js",
+      "name": "./node_modules/react-helmet/lib/Helmet.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "../../actions": [
+    {
+      "id": "./src/universal/actions/index.ts",
+      "name": "./src/universal/actions/index.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/actions/index.ts",
+      "name": "./src/universal/actions/index.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./movies": [
+    {
+      "id": "./src/universal/actions/movies.ts",
+      "name": "./src/universal/actions/movies.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/reducers/movies.ts",
+      "name": "./src/universal/reducers/movies.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/actions/movies.ts",
+      "name": "./src/universal/actions/movies.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    },
+    {
+      "id": "./src/universal/reducers/movies.ts",
+      "name": "./src/universal/reducers/movies.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./movie": [
+    {
+      "id": "./src/universal/actions/movie.ts",
+      "name": "./src/universal/actions/movie.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/actions/movie.ts",
+      "name": "./src/universal/actions/movie.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./comment": [
+    {
+      "id": "./src/universal/actions/comment.ts",
+      "name": "./src/universal/actions/comment.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/actions/comment.ts",
+      "name": "./src/universal/actions/comment.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "../constants/types": [
+    {
+      "id": "./src/universal/constants/types.ts",
+      "name": "./src/universal/constants/types.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/constants/types.ts",
+      "name": "./src/universal/constants/types.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "prop-types": [
+    {
+      "id": "./node_modules/prop-types/index.js",
+      "name": "./node_modules/prop-types/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/index.js",
+      "name": "./node_modules/prop-types/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "react-side-effect": [
+    {
+      "id": "./node_modules/react-side-effect/lib/index.js",
+      "name": "./node_modules/react-side-effect/lib/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-side-effect/lib/index.js",
+      "name": "./node_modules/react-side-effect/lib/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "deep-equal": [
+    {
+      "id": "./node_modules/deep-equal/index.js",
+      "name": "./node_modules/deep-equal/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/index.js",
+      "name": "./node_modules/deep-equal/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./HelmetUtils.js": [
+    {
+      "id": "./node_modules/react-helmet/lib/HelmetUtils.js",
+      "name": "./node_modules/react-helmet/lib/HelmetUtils.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/lib/HelmetUtils.js",
+      "name": "./node_modules/react-helmet/lib/HelmetUtils.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./HelmetConstants.js": [
+    {
+      "id": "./node_modules/react-helmet/lib/HelmetConstants.js",
+      "name": "./node_modules/react-helmet/lib/HelmetConstants.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/lib/HelmetConstants.js",
+      "name": "./node_modules/react-helmet/lib/HelmetConstants.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./../../webpack/buildin/global.js": [
+    {
+      "id": "./node_modules/webpack/buildin/global.js",
+      "name": "./node_modules/webpack/buildin/global.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/global.js",
+      "name": "./node_modules/webpack/buildin/global.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "object-assign": [
+    {
+      "id": "./node_modules/object-assign/index.js",
+      "name": "./node_modules/object-assign/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/object-assign/index.js",
+      "name": "./node_modules/object-assign/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./lib/keys.js": [
+    {
+      "id": "./node_modules/deep-equal/lib/keys.js",
+      "name": "./node_modules/deep-equal/lib/keys.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/lib/keys.js",
+      "name": "./node_modules/deep-equal/lib/keys.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./lib/is_arguments.js": [
+    {
+      "id": "./node_modules/deep-equal/lib/is_arguments.js",
+      "name": "./node_modules/deep-equal/lib/is_arguments.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/lib/is_arguments.js",
+      "name": "./node_modules/deep-equal/lib/is_arguments.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "exenv": [
+    {
+      "id": "./node_modules/exenv/index.js",
+      "name": "./node_modules/exenv/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/exenv/index.js",
+      "name": "./node_modules/exenv/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "shallowequal": [
+    {
+      "id": "./node_modules/shallowequal/index.js",
+      "name": "./node_modules/shallowequal/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/shallowequal/index.js",
+      "name": "./node_modules/shallowequal/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./factoryWithTypeCheckers": [
+    {
+      "id": "./node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "fbjs/lib/emptyFunction": [
+    {
+      "id": "./node_modules/fbjs/lib/emptyFunction.js",
+      "name": "./node_modules/fbjs/lib/emptyFunction.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/emptyFunction.js",
+      "name": "./node_modules/fbjs/lib/emptyFunction.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "fbjs/lib/invariant": [
+    {
+      "id": "./node_modules/fbjs/lib/invariant.js",
+      "name": "./node_modules/fbjs/lib/invariant.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/invariant.js",
+      "name": "./node_modules/fbjs/lib/invariant.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "fbjs/lib/warning": [
+    {
+      "id": "./node_modules/fbjs/lib/warning.js",
+      "name": "./node_modules/fbjs/lib/warning.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/warning.js",
+      "name": "./node_modules/fbjs/lib/warning.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./lib/ReactPropTypesSecret": [
+    {
+      "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    },
+    {
+      "id": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    },
+    {
+      "id": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./checkPropTypes": [
+    {
+      "id": "./node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "../components/loading": [
+    {
+      "id": "./src/universal/components/loading/index.tsx",
+      "name": "./src/universal/components/loading/index.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/components/loading/index.tsx",
+      "name": "./src/universal/components/loading/index.tsx",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "../components/layout/Header": [
+    {
+      "id": "./src/universal/components/layout/Header.tsx",
+      "name": "./src/universal/components/layout/Header.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/components/layout/Header.tsx",
+      "name": "./src/universal/components/layout/Header.tsx",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -181,6 +623,20 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
+  "axios": [
+    {
+      "id": "./node_modules/axios/index.js",
+      "name": "./node_modules/axios/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/axios/index.js",
+      "name": "./node_modules/axios/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
   "./reducers": [
     {
       "id": "./src/universal/reducers/index.ts",
@@ -195,84 +651,30 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./about": [
+  "../config/keys": [
     {
-      "id": "./src/universal/reducers/about.ts",
-      "name": "./src/universal/reducers/about.ts",
+      "id": "./src/config/keys.ts",
+      "name": "./src/config/keys.ts",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/actions/about.ts",
-      "name": "./src/universal/actions/about.ts",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./src/universal/reducers/about.ts",
-      "name": "./src/universal/reducers/about.ts",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    },
-    {
-      "id": "./src/universal/actions/about.ts",
-      "name": "./src/universal/actions/about.ts",
+      "id": "./src/config/keys.ts",
+      "name": "./src/config/keys.ts",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./actions": [
+  "./dev": [
     {
-      "id": "./src/universal/actions/index.ts",
-      "name": "./src/universal/actions/index.ts",
+      "id": "./src/config/dev.ts",
+      "name": "./src/config/dev.ts",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/actions/index.ts",
-      "name": "./src/universal/actions/index.ts",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "./location": [
-    {
-      "id": "./src/universal/actions/location.ts",
-      "name": "./src/universal/actions/location.ts",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./src/universal/actions/location.ts",
-      "name": "./src/universal/actions/location.ts",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "./api": [
-    {
-      "id": "./src/universal/actions/api.ts",
-      "name": "./src/universal/actions/api.ts",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./src/universal/actions/api.ts",
-      "name": "./src/universal/actions/api.ts",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "axios": [
-    {
-      "id": "./node_modules/axios/index.js",
-      "name": "./node_modules/axios/index.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/axios/index.js",
-      "name": "./node_modules/axios/index.js",
+      "id": "./src/config/dev.ts",
+      "name": "./src/config/dev.ts",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -865,20 +1267,6 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./../../webpack/buildin/global.js": [
-    {
-      "id": "./node_modules/webpack/buildin/global.js",
-      "name": "./node_modules/webpack/buildin/global.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/webpack/buildin/global.js",
-      "name": "./node_modules/webpack/buildin/global.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
   "symbol-observable": [
     {
       "id": "./node_modules/symbol-observable/es/index.js",
@@ -921,44 +1309,142 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "../Routes": [
+  "./matchRoutes": [
     {
-      "id": "./src/universal/Routes.ts",
-      "name": "./src/universal/Routes.ts",
+      "id": "./node_modules/react-router-config/es/matchRoutes.js",
+      "name": "./node_modules/react-router-config/es/matchRoutes.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/Routes.ts",
-      "name": "./src/universal/Routes.ts",
+      "id": "./node_modules/react-router-config/es/matchRoutes.js",
+      "name": "./node_modules/react-router-config/es/matchRoutes.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./loadable": [
+  "./renderRoutes": [
     {
-      "id": "./src/universal/loadable/index.tsx",
-      "name": "./src/universal/loadable/index.tsx",
+      "id": "./node_modules/react-router-config/es/renderRoutes.js",
+      "name": "./node_modules/react-router-config/es/renderRoutes.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/loadable/index.tsx",
-      "name": "./src/universal/loadable/index.tsx",
+      "id": "./node_modules/react-router-config/es/renderRoutes.js",
+      "name": "./node_modules/react-router-config/es/renderRoutes.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "../components/loading": [
+  "react-router/Switch": [
     {
-      "id": "./src/universal/components/loading/index.tsx",
-      "name": "./src/universal/components/loading/index.tsx",
+      "id": "./node_modules/react-router/Switch.js",
+      "name": "./node_modules/react-router/Switch.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/components/loading/index.tsx",
-      "name": "./src/universal/components/loading/index.tsx",
+      "id": "./node_modules/react-router/Switch.js",
+      "name": "./node_modules/react-router/Switch.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "react-router/Route": [
+    {
+      "id": "./node_modules/react-router/Route.js",
+      "name": "./node_modules/react-router/Route.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/Route.js",
+      "name": "./node_modules/react-router/Route.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "warning": [
+    {
+      "id": "./node_modules/warning/browser.js",
+      "name": "./node_modules/warning/browser.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/warning/browser.js",
+      "name": "./node_modules/warning/browser.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "invariant": [
+    {
+      "id": "./node_modules/invariant/browser.js",
+      "name": "./node_modules/invariant/browser.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/invariant/browser.js",
+      "name": "./node_modules/invariant/browser.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "react-router/matchPath": [
+    {
+      "id": "./node_modules/react-router/matchPath.js",
+      "name": "./node_modules/react-router/matchPath.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/matchPath.js",
+      "name": "./node_modules/react-router/matchPath.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "path-to-regexp": [
+    {
+      "id": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
+      "name": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
+      "name": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "isarray": [
+    {
+      "id": "./node_modules/react-router/node_modules/isarray/index.js",
+      "name": "./node_modules/react-router/node_modules/isarray/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/isarray/index.js",
+      "name": "./node_modules/react-router/node_modules/isarray/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "react-router/Router": [
+    {
+      "id": "./node_modules/react-router/Router.js",
+      "name": "./node_modules/react-router/Router.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/Router.js",
+      "name": "./node_modules/react-router/Router.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -1159,20 +1645,6 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "prop-types": [
-    {
-      "id": "./node_modules/prop-types/index.js",
-      "name": "./node_modules/prop-types/index.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/prop-types/index.js",
-      "name": "./node_modules/prop-types/index.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
   "hoist-non-react-statics": [
     {
       "id": "./node_modules/hoist-non-react-statics/index.js",
@@ -1201,34 +1673,6 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "warning": [
-    {
-      "id": "./node_modules/warning/browser.js",
-      "name": "./node_modules/warning/browser.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/warning/browser.js",
-      "name": "./node_modules/warning/browser.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "invariant": [
-    {
-      "id": "./node_modules/invariant/browser.js",
-      "name": "./node_modules/invariant/browser.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/invariant/browser.js",
-      "name": "./node_modules/invariant/browser.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
   "react-router/es/matchPath": [
     {
       "id": "./node_modules/react-router/es/matchPath.js",
@@ -1239,156 +1683,6 @@
     {
       "id": "./node_modules/react-router/es/matchPath.js",
       "name": "./node_modules/react-router/es/matchPath.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "path-to-regexp": [
-    {
-      "id": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
-      "name": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
-      "name": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "isarray": [
-    {
-      "id": "./node_modules/react-router/node_modules/isarray/index.js",
-      "name": "./node_modules/react-router/node_modules/isarray/index.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/react-router/node_modules/isarray/index.js",
-      "name": "./node_modules/react-router/node_modules/isarray/index.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "./factoryWithTypeCheckers": [
-    {
-      "id": "./node_modules/prop-types/factoryWithTypeCheckers.js",
-      "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/prop-types/factoryWithTypeCheckers.js",
-      "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "fbjs/lib/emptyFunction": [
-    {
-      "id": "./node_modules/fbjs/lib/emptyFunction.js",
-      "name": "./node_modules/fbjs/lib/emptyFunction.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/fbjs/lib/emptyFunction.js",
-      "name": "./node_modules/fbjs/lib/emptyFunction.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "fbjs/lib/invariant": [
-    {
-      "id": "./node_modules/fbjs/lib/invariant.js",
-      "name": "./node_modules/fbjs/lib/invariant.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/fbjs/lib/invariant.js",
-      "name": "./node_modules/fbjs/lib/invariant.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "fbjs/lib/warning": [
-    {
-      "id": "./node_modules/fbjs/lib/warning.js",
-      "name": "./node_modules/fbjs/lib/warning.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/fbjs/lib/warning.js",
-      "name": "./node_modules/fbjs/lib/warning.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "object-assign": [
-    {
-      "id": "./node_modules/object-assign/index.js",
-      "name": "./node_modules/object-assign/index.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/object-assign/index.js",
-      "name": "./node_modules/object-assign/index.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "./lib/ReactPropTypesSecret": [
-    {
-      "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "name": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "name": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    },
-    {
-      "id": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "name": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    },
-    {
-      "id": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "name": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "./checkPropTypes": [
-    {
-      "id": "./node_modules/prop-types/checkPropTypes.js",
-      "name": "./node_modules/prop-types/checkPropTypes.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/prop-types/checkPropTypes.js",
-      "name": "./node_modules/prop-types/checkPropTypes.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -3133,16 +3427,16 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./modules/es6.string.ends-with": [
+  "babel-polyfill": [
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "id": "./node_modules/babel-polyfill/lib/index.js",
+      "name": "./node_modules/babel-polyfill/lib/index.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "id": "./node_modules/babel-polyfill/lib/index.js",
+      "name": "./node_modules/babel-polyfill/lib/index.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -3273,16 +3567,16 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "babel-polyfill": [
+  "./modules/es6.string.fontsize": [
     {
-      "id": "./node_modules/babel-polyfill/lib/index.js",
-      "name": "./node_modules/babel-polyfill/lib/index.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./node_modules/babel-polyfill/lib/index.js",
-      "name": "./node_modules/babel-polyfill/lib/index.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.fontsize.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }

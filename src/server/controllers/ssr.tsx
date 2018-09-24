@@ -1,4 +1,3 @@
-import * as express from "express";
 import { Request, Response } from 'express';
 import * as React from "react";
 import * as ReactDOMServer from "react-dom/server";
@@ -8,7 +7,7 @@ import { Helmet, HelmetData } from 'react-helmet';
 import { Provider } from "react-redux";
 import { Store, Dispatch } from 'redux';
 import { StaticRouter } from "react-router-dom";
-import { renderRoutes, matchRoutes } from 'react-router-config';
+import { renderRoutes, matchRoutes, RouteConfig } from 'react-router-config';
 import * as serialize from "serialize-javascript";
 
 import { routes } from "../../universal/Routes";
@@ -18,15 +17,18 @@ import { IState } from '../../universal/models/state'
 
 const stats = require("../stats/reactLoadable.json");
 
+interface IRouteConfig extends RouteConfig {
+  fetchData?: (dispatch) => Promise<any>
+}
 
 export default async (req: Request, res: Response) => {
   const store: Store<IState> = createStore();
   const { dispatch }: { dispatch: Dispatch<{}> } = store;
 
-	const promises: any = matchRoutes<{}>(routes, req.path)
-		.map(({ route }) => {
-      const component: any = route.component;
-			return component.fetchData ? component.fetchData(dispatch) : null;
+	const promises: any = matchRoutes<any>(routes, req.path)
+		.map(({ route }: { route: IRouteConfig}) => {
+      const { fetchData } = route;
+			return fetchData ? fetchData(dispatch) : null;
 		})
 		.map(promise => {
 			if (promise) {
@@ -42,13 +44,13 @@ export default async (req: Request, res: Response) => {
   const modules: string[] = [];
   const context: { url?: string, notFound?: boolean } = {};
   const html: string = ReactDOMServer.renderToString(
+    <Loadable.Capture report={moduleName => modules.push(moduleName)}>
       <Provider store={store}>
         <StaticRouter location={req.url} context={context}>
-          <Loadable.Capture report={moduleName => modules.push(moduleName)}>
             <div>{renderRoutes(routes)}</div>
-        </Loadable.Capture>
         </StaticRouter>
       </Provider>
+    </Loadable.Capture>
   );
 
   if (context.url) {
