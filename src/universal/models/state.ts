@@ -1,9 +1,7 @@
-import { IAboutState } from "./about";
-import { IApiState } from "./api";
-import { ILocationState } from "./location";
+import { IMoviesState } from "./movies";
+import { IMovieState } from "./movie";
 
 export interface IState {
-    readonly about: IAboutState;
-    readonly api: IApiState;
-    readonly location: ILocationState;
+    readonly movies: IMoviesState;
+    readonly movie: IMovieState;
 }

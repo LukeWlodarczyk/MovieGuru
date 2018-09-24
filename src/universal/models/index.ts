@@ -1,5 +1,3 @@
 export * from "./window";
+export * from "./movies";
 export * from "./state";
-export * from "./api";
-export * from "./about";
-export * from "./location";
