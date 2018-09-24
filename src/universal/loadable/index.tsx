@@ -11,6 +11,12 @@ export const LoadableMovie = Loadable({
     loading: Loading
 });
 
+export const LoadableAddMovie = Loadable({
+    loader: () => import(/* webpackChunkName: "addMovie" */ "../pages/addMovie"),
+    loading: Loading
+});
+
 
 export const loadHome = () => LoadableHome.preload();
 export const loadMovie = () => LoadableMovie.preload();
+export const loadAddMovie = () => LoadableAddMovie.preload();

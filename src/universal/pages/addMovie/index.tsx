@@ -14,37 +14,30 @@ type MapDispatchToProps = ReturnType<typeof mapDispatchToProps>;
 interface IHomeOwnProps extends RouteComponentProps<undefined> {}
 interface IHomeProps extends MapStateToProps, MapDispatchToProps, IHomeOwnProps {}
 
-class Home extends React.Component<IHomeProps, {}> {
+class AddMovie extends React.Component<IHomeProps, {}> {
 
-  componentDidMount() {
-    this.props.getMovies()
-  }
 
   render() {
-    console.log(this.props.moviesData)
+
 
     return (
         <section>
             <Helmet>
               <title>MovieGuru => Find movie for tonight!</title>
             </Helmet>
-            <h1>Home</h1>
-            <Link onMouseOver={loadMovie} to="/movie">To Movie</Link>
+            <h1>Add movie</h1>
         </section>
     );
   }
 }
 
-const mapStateToProps = (state: IState, ownProps: IHomeOwnProps) =>
-({ moviesData: state.movies });
+const mapStateToProps = (state: IState, ownProps: IHomeOwnProps) => ({});
 
 
 const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: IHomeOwnProps) => ({
-    getMovies: () => {
-        return dispatch<any>(getMovies());
+    addMovie: () => {
+        return dispatch<any>(()=>({}));
     }
 });
 
-export const fetchMovies = (dispatch) => dispatch(getMovies())
-
-export default connect<MapStateToProps, MapDispatchToProps, IHomeOwnProps, IState>(mapStateToProps, mapDispatchToProps)(Home);
+export default connect<MapStateToProps, MapDispatchToProps, IHomeOwnProps, IState>(mapStateToProps, mapDispatchToProps)(AddMovie);
