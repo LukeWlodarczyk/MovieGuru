@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 import movies from "./movies";
-import movie from "./movies";
+import movie from "./movie";
 
 import { IState } from '../models'
 

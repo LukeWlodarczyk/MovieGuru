@@ -2,7 +2,7 @@ import App from './app';
 // import { RouteConfig } from 'react-router-config';
 import { LoadableHome, LoadableMovie } from './loadable';
 import { fetchMovies } from './pages/home';
-import Movie from './pages/movie';
+import { fetchMovie } from './pages/movie';
 
 
 
@@ -18,8 +18,9 @@ export const routes: any[] = [
           fetchData: fetchMovies,
       },
       {
-          path: "/movie/:id",
+          path: "/movies/:id",
           component: LoadableMovie,
+          fetchData: fetchMovie,
       },
     ]
   }
