@@ -1,32 +1,31 @@
 import {
-    AboutAction,
-    FETCH_ABOUT_FAILURE,
-    FETCH_ABOUT_REQUEST,
-    FETCH_ABOUT_SUCCESS
-} from "../actions";
-import { IAboutState } from "../models";
+    FETCH_COMMENTS_FAILURE,
+    FETCH_COMMENTS_REQUEST,
+    FETCH_COMMENTS_SUCCESS
+} from "../constants/types";
 
-const initialAboutState = {
+
+const initialState = {
     isLoading: false,
     isError: false,
-    data: {},
+    data: [],
 };
 
-export default function about(state = initialAboutState, action) {
+export default (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_ABOUT_REQUEST:
+        case FETCH_COMMENTS_REQUEST:
             return {
                 ...state,
                 isLoading: true,
                 isError: false
             };
-        case FETCH_ABOUT_SUCCESS:
+        case FETCH_COMMENTS_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                data: action.payload
+                data: [...action.payload]
             };
-        case FETCH_ABOUT_FAILURE:
+        case FETCH_COMMENTS_FAILURE:
             return {
                 ...state,
                 isLoading: false,

@@ -1,8 +1,11 @@
-import { combineReducers, Reducer } from "redux";
+import { combineReducers } from "redux";
 
-import { IState, IAboutState, IApiState, ILocationState } from "../models";
-import movies from "./about";
+import movies from "./movies";
+import movie from "./movies";
+
+import { IState } from '../models'
 
 export default combineReducers<IState>({
     movies,
+    movie,
 });

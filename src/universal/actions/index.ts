@@ -1,3 +1,3 @@
-export * from "./about";
-export * from "./location";
-export * from "./api";
+export * from './movies';
+export * from './movie';
+export * from './comment';
