@@ -21,7 +21,6 @@ class Home extends React.Component<IHomeProps, {}> {
   }
 
   render() {
-    console.log(this.props.moviesData)
 
     return (
         <section>
@@ -29,7 +28,12 @@ class Home extends React.Component<IHomeProps, {}> {
               <title>MovieGuru => Find movie for tonight!</title>
             </Helmet>
             <h1>Home</h1>
-            <Link onMouseOver={loadMovie} to="/movie">To Movie</Link>
+            {this.props.moviesData.data.map((movie: { title: string, _id: string}) => {
+              return (
+                <Link key={movie._id} onMouseOver={loadMovie} to={`/movies/${movie._id}`}>
+                  <p>{movie.title}</p>
+                </Link>)
+            })}
         </section>
     );
   }
