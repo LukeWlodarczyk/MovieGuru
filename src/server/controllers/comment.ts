@@ -1,8 +1,5 @@
-import * as mongoose from 'mongoose';
-import axios from 'axios';
-
-import CommentSchema from '../models/Comment';
 import { Request, Response } from 'express';
+import * as mongoose from 'mongoose';
 
 const Comment = mongoose.model('comments');
 const Movie = mongoose.model('movies');

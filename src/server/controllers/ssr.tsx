@@ -1,4 +1,5 @@
 import * as express from "express";
+import { Request, Response } from 'express';
 import * as React from "react";
 import * as ReactDOMServer from "react-dom/server";
 import * as Loadable from "react-loadable";
@@ -10,7 +11,6 @@ import { StaticRouter } from "react-router-dom";
 import { renderRoutes, matchRoutes } from 'react-router-config';
 import * as serialize from "serialize-javascript";
 
-import App from "../../universal/app";
 import { routes } from "../../universal/Routes";
 import createStore from "../../universal/Store";
 
@@ -19,13 +19,14 @@ import { IState } from '../../universal/models/state'
 const stats = require("../stats/reactLoadable.json");
 
 
-export default async (req: express.Request, res: express.Response) => {
+export default async (req: Request, res: Response) => {
   const store: Store<IState> = createStore();
+  const { dispatch }: { dispatch: Dispatch<{}> } = store;
 
 	const promises: any = matchRoutes<{}>(routes, req.path)
 		.map(({ route }) => {
       const component: any = route.component;
-			return component.fetchData ? component.fetchData(store.dispatch) : null;
+			return component.fetchData ? component.fetchData(dispatch) : null;
 		})
 		.map(promise => {
 			if (promise) {
