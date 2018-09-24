@@ -1,3 +1,5 @@
 export * from "./window";
-export * from "./movies";
+export * from "./moviesState";
+export * from "./movieState";
 export * from "./state";
+export * from "./movie"

@@ -1,5 +1,36 @@
-export interface IMovieState {
-    readonly movie: object;
-    readonly isLoading: boolean;
-    readonly isError: boolean;
+interface IRating {
+  _id: string,
+  source: string,
+  value: string
+}
+
+export interface IMovie {
+  readonly director: string[],
+  readonly genre: string[],
+  readonly language: string[],
+  readonly country: string[],
+  readonly actors: string[],
+  readonly writer: string[],
+  readonly _id: string,
+  readonly title: string,
+  readonly year: number,
+  readonly rated: string,
+  readonly released: string,
+  readonly runtime: number,
+  readonly plot: string,
+  readonly awards: string,
+  readonly poster: string,
+  readonly ratings: IRating[],
+  readonly metascore: string,
+  readonly imdbRating: number,
+  readonly imdbVotes: number,
+  readonly imdbID: string,
+  readonly type: string,
+  readonly dvd: string,
+  readonly boxOffice: number,
+  readonly production: string,
+  readonly website: string,
+  readonly createdAt: string,
+  readonly updatedAt: string,
+  readonly __v: string,
 }

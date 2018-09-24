@@ -1,5 +1,7 @@
+import { IMovie } from './'
+
 export interface IMoviesState {
-    readonly movies: object[];
+    readonly data: IMovie[];
     readonly isLoading: boolean;
     readonly isError: boolean;
 }

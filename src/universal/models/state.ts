@@ -1,5 +1,5 @@
-import { IMoviesState } from "./movies";
-import { IMovieState } from "./movie";
+import { IMoviesState } from "./moviesState";
+import { IMovieState } from "./movieState";
 
 export interface IState {
     readonly movies: IMoviesState;
