@@ -3,54 +3,74 @@ import * as React from "react";
 import * as ReactDOMServer from "react-dom/server";
 import * as Loadable from "react-loadable";
 import { getBundles } from "react-loadable/webpack";
+import { Helmet, HelmetData } from 'react-helmet';
 import { Provider } from "react-redux";
-import { matchPath, StaticRouter } from "react-router-dom";
-import serialize from "serialize-javascript";
+import { Store, Dispatch } from 'redux';
+import { StaticRouter } from "react-router-dom";
+import { renderRoutes, matchRoutes } from 'react-router-config';
+import * as serialize from "serialize-javascript";
 
 import App from "../../universal/app";
 import { routes } from "../../universal/Routes";
 import createStore from "../../universal/Store";
 
+import { IState } from '../../universal/models/state'
+
 const stats = require("../stats/reactLoadable.json");
 
 
 export default async (req: express.Request, res: express.Response) => {
-  const promises: Array<any> = [];
-  const store = createStore();
+  const store: Store<IState> = createStore();
 
-  routes.some(route => {
-    const match = matchPath(req.path, route);
-    if (match && route.fetchData) {
-      promises.push(store.dispatch(route.fetchData()));
-    }
-    return !!match;
-  });
+	const promises: any = matchRoutes<{}>(routes, req.path)
+		.map(({ route }) => {
+      const component: any = route.component;
+			return component.fetchData ? component.fetchData(store.dispatch) : null;
+		})
+		.map(promise => {
+			if (promise) {
+				return new Promise((resolve) => {
+					promise.then(resolve).catch(resolve);
+				});
+			}
+      return null;
+		});
 
   await Promise.all(promises);
 
   const modules: string[] = [];
-  const context = {};
-  const html = ReactDOMServer.renderToString(
-    <Loadable.Capture report={moduleName => modules.push(moduleName)}>
+  const context: { url?: string, notFound?: boolean } = {};
+  const html: string = ReactDOMServer.renderToString(
       <Provider store={store}>
         <StaticRouter location={req.url} context={context}>
-          <App />
+          <Loadable.Capture report={moduleName => modules.push(moduleName)}>
+            <div>{renderRoutes(routes)}</div>
+        </Loadable.Capture>
         </StaticRouter>
       </Provider>
-    </Loadable.Capture>
   );
+
+  if (context.url) {
+    return res.redirect(302, context.url);
+  }
+
+  if (context.notFound) {
+    return res.status(404);
+  }
+
   const bundles = getBundles(stats, modules);
 
-  const styles = bundles
+  const styles: string = bundles
     .filter(bundle => bundle.file.endsWith(".css"))
     .map(style => `<link href="/static/${style.file}" rel="stylesheet"/>`)
     .join("\n");
-  const scripts = bundles
+  const scripts: string = bundles
     .filter(bundle => bundle.file.endsWith(".js"))
     .map(script => `<script src="/static/js/${script.file}"></script>`)
     .join("\n");
 
   const preloadedState = serialize(store.getState(), { isJSON: true });
+  const helmet: HelmetData = Helmet.renderStatic();
 
   const content = `
       <!doctype html>
@@ -60,7 +80,7 @@ export default async (req: express.Request, res: express.Response) => {
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <meta http-equiv="X-UA-Compatible" content="ie=edge">
               <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
-              <title>My App</title>
+              ${helmet.title.toString()}
               ${styles}
           </head>
           <body>
@@ -70,8 +90,8 @@ export default async (req: express.Request, res: express.Response) => {
               ${scripts}
           </body>
       </html>
-  `
+  `;
 
-  res.send(content);
+  return res.send(content);
 
 }
