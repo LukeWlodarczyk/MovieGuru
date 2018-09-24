@@ -1,19 +1,24 @@
 import * as React from "react";
-import { connect } from "react-redux";
-import { Route, RouteComponentProps, Switch, withRouter } from "react-router-dom";
-import { Dispatch } from "redux";
+import { renderRoutes, RouteConfig } from "react-router-config";
+import { RouteComponentProps } from 'react-router-dom';
 
-import { setLocationChanged } from "../actions";
-import { IState } from "../models";
-import { routes } from "../Routes";
+import Header from '../components/layout/Header';
 
+export interface IAppProps extends RouteComponentProps<void> {
+    route: RouteConfig;
+}
 
+class App extends React.Component<IAppProps, {}> {
 
-class App extends React.Component {
+    render(): JSX.Element {
+      return (
+        <div className="container">
+          <Header />
+          {renderRoutes(this.props.route.routes)}
+        </div>
+      )
+    }
 
-  render() {
-    return <Switch>{routes.map(route => <Route {...route} key={route.path} />)}</Switch>;
-  }
 }
 
 export default App;
