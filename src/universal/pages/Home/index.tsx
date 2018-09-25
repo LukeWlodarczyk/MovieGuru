@@ -7,7 +7,7 @@ import { RouteComponentProps } from "react-router-dom";
 import { IState, IMovie } from "../../models";
 import { getMovies } from '../../actions'
 
-import MovieCard from '../../components/movieCard';
+import MovieCard from '../../components/MovieCard';
 
 type MapStateToProps = ReturnType<typeof mapStateToProps>;
 type MapDispatchToProps = ReturnType<typeof mapDispatchToProps>;
@@ -21,7 +21,6 @@ class Home extends React.Component<IHomeProps, {}> {
   }
 
   render() {
-
     return (
         <section>
             <Helmet>

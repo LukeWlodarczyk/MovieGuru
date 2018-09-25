@@ -1,8 +1,8 @@
-import App from './app';
+import App from './App';
 // import { RouteConfig } from 'react-router-config';
 import { LoadableHome, LoadableMovie } from './loadable';
-import { fetchMovies } from './pages/home';
-import { fetchMovie } from './pages/movie';
+import { fetchMovies } from './pages/Home';
+import { fetchMovie } from './pages/Movie';
 
 
 
