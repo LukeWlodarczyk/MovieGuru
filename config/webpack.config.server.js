@@ -1,6 +1,9 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+const styledComponentsTransformer = createStyledComponentsTransformer({ ssr: true });
+
 module.exports = {
     // Set Webpack build for Node.js
     target: "node",
@@ -54,7 +57,8 @@ module.exports = {
                         loader: "ts-loader",
                         options: {
                             configFile: require.resolve("./tsconfig.json"),
-                            context: __dirname
+                            context: __dirname,
+                            getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
                         }
                     }
                 ]

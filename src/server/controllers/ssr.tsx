@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { Store, Dispatch } from 'redux';
 import { StaticRouter } from "react-router-dom";
 import { renderRoutes, matchRoutes, RouteConfig } from 'react-router-config';
+import { ServerStyleSheet } from 'styled-components'
 import * as serialize from "serialize-javascript";
 
 import { routes } from "../../universal/Routes";
@@ -41,13 +42,15 @@ export default async (req: Request, res: Response) => {
 
   await Promise.all(promises);
 
+  const sheet = new ServerStyleSheet();
+
   const modules: string[] = [];
   const context: { url?: string, notFound?: boolean } = {};
   const html: string = ReactDOMServer.renderToString(
     <Loadable.Capture report={moduleName => modules.push(moduleName)}>
       <Provider store={store}>
         <StaticRouter location={req.url} context={context}>
-            <div>{renderRoutes(routes)}</div>
+            {sheet.collectStyles(<div>{renderRoutes(routes)}</div>)}
         </StaticRouter>
       </Provider>
     </Loadable.Capture>
@@ -72,6 +75,7 @@ export default async (req: Request, res: Response) => {
     .map(script => `<script src="/static/js/${script.file}"></script>`)
     .join("\n");
 
+  const styledComponents: string = sheet.getStyleTags();
   const preloadedState = serialize(store.getState(), { isJSON: true });
   const helmet: HelmetData = Helmet.renderStatic();
 
@@ -85,6 +89,7 @@ export default async (req: Request, res: Response) => {
               <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
               ${helmet.title.toString()}
               ${styles}
+              ${styledComponents}
           </head>
           <body>
               <div id="root">${html}</div>
