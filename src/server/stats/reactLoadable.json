@@ -1,28 +1,28 @@
 {
-  "../pages/addMovie": [
+  "../pages/AddMovie": [
     {
-      "id": "./src/universal/pages/addMovie/index.tsx",
-      "name": "./src/universal/pages/addMovie/index.tsx",
+      "id": "./src/universal/pages/AddMovie/index.tsx",
+      "name": "./src/universal/pages/AddMovie/index.tsx",
       "file": "addMovie.js",
       "publicPath": "/static/js/addMovie.js"
     },
     {
-      "id": "./src/universal/pages/addMovie/index.tsx",
-      "name": "./src/universal/pages/addMovie/index.tsx",
+      "id": "./src/universal/pages/AddMovie/index.tsx",
+      "name": "./src/universal/pages/AddMovie/index.tsx",
       "file": "addMovie.js.map",
       "publicPath": "/static/js/addMovie.js.map"
     }
   ],
-  "./modules/es6.string.ends-with": [
+  "./modules/es6.math.trunc": [
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -167,16 +167,16 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./app": [
+  "./App": [
     {
-      "id": "./src/universal/app/index.tsx",
-      "name": "./src/universal/app/index.tsx",
+      "id": "./src/universal/App/index.tsx",
+      "name": "./src/universal/App/index.tsx",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/app/index.tsx",
-      "name": "./src/universal/app/index.tsx",
+      "id": "./src/universal/App/index.tsx",
+      "name": "./src/universal/App/index.tsx",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -195,16 +195,30 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./pages/home": [
+  "./pages/Home": [
     {
-      "id": "./src/universal/pages/home/index.tsx",
-      "name": "./src/universal/pages/home/index.tsx",
+      "id": "./src/universal/pages/Home/index.tsx",
+      "name": "./src/universal/pages/Home/index.tsx",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/pages/home/index.tsx",
-      "name": "./src/universal/pages/home/index.tsx",
+      "id": "./src/universal/pages/Home/index.tsx",
+      "name": "./src/universal/pages/Home/index.tsx",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./pages/Movie": [
+    {
+      "id": "./src/universal/pages/Movie/index.tsx",
+      "name": "./src/universal/pages/Movie/index.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/pages/Movie/index.tsx",
+      "name": "./src/universal/pages/Movie/index.tsx",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -271,8 +285,20 @@
       "publicPath": "/static/js/main.js"
     },
     {
+      "id": "./src/universal/reducers/movie.ts",
+      "name": "./src/universal/reducers/movie.ts",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
       "id": "./src/universal/actions/movie.ts",
       "name": "./src/universal/actions/movie.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    },
+    {
+      "id": "./src/universal/reducers/movie.ts",
+      "name": "./src/universal/reducers/movie.ts",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -567,30 +593,198 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "../components/loading": [
+  "../../components/MovieCard": [
     {
-      "id": "./src/universal/components/loading/index.tsx",
-      "name": "./src/universal/components/loading/index.tsx",
+      "id": "./src/universal/components/MovieCard/index.tsx",
+      "name": "./src/universal/components/MovieCard/index.tsx",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/components/loading/index.tsx",
-      "name": "./src/universal/components/loading/index.tsx",
+      "id": "./src/universal/components/MovieCard/index.tsx",
+      "name": "./src/universal/components/MovieCard/index.tsx",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "../components/layout/Header": [
+  "./styled": [
     {
-      "id": "./src/universal/components/layout/Header.tsx",
-      "name": "./src/universal/components/layout/Header.tsx",
+      "id": "./src/universal/components/MovieCard/styled.ts",
+      "name": "./src/universal/components/MovieCard/styled.ts",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./src/universal/components/layout/Header.tsx",
-      "name": "./src/universal/components/layout/Header.tsx",
+      "id": "./src/universal/components/MovieCard/styled.ts",
+      "name": "./src/universal/components/MovieCard/styled.ts",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "styled-components": [
+    {
+      "id": "./node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "name": "./node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "name": "./node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./../../process/browser.js": [
+    {
+      "id": "./node_modules/process/browser.js",
+      "name": "./node_modules/process/browser.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/process/browser.js",
+      "name": "./node_modules/process/browser.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./../../webpack/buildin/harmony-module.js": [
+    {
+      "id": "./node_modules/webpack/buildin/harmony-module.js",
+      "name": "./node_modules/webpack/buildin/harmony-module.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/harmony-module.js",
+      "name": "./node_modules/webpack/buildin/harmony-module.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "fbjs/lib/hyphenateStyleName": [
+    {
+      "id": "./node_modules/fbjs/lib/hyphenateStyleName.js",
+      "name": "./node_modules/fbjs/lib/hyphenateStyleName.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/hyphenateStyleName.js",
+      "name": "./node_modules/fbjs/lib/hyphenateStyleName.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "stylis": [
+    {
+      "id": "./node_modules/stylis/stylis.js",
+      "name": "./node_modules/stylis/stylis.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/stylis/stylis.js",
+      "name": "./node_modules/stylis/stylis.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "stylis-rule-sheet": [
+    {
+      "id": "./node_modules/stylis-rule-sheet/index.js",
+      "name": "./node_modules/stylis-rule-sheet/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/stylis-rule-sheet/index.js",
+      "name": "./node_modules/stylis-rule-sheet/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "hoist-non-react-statics": [
+    {
+      "id": "./node_modules/hoist-non-react-statics/index.js",
+      "name": "./node_modules/hoist-non-react-statics/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/hoist-non-react-statics/index.js",
+      "name": "./node_modules/hoist-non-react-statics/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "react-is": [
+    {
+      "id": "./node_modules/react-is/index.js",
+      "name": "./node_modules/react-is/index.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-is/index.js",
+      "name": "./node_modules/react-is/index.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./cjs/react-is.development.js": [
+    {
+      "id": "./node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "./hyphenate": [
+    {
+      "id": "./node_modules/fbjs/lib/hyphenate.js",
+      "name": "./node_modules/fbjs/lib/hyphenate.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/hyphenate.js",
+      "name": "./node_modules/fbjs/lib/hyphenate.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "../components/Loading": [
+    {
+      "id": "./src/universal/components/Loading/index.tsx",
+      "name": "./src/universal/components/Loading/index.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/components/Loading/index.tsx",
+      "name": "./src/universal/components/Loading/index.tsx",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    }
+  ],
+  "../components/Header": [
+    {
+      "id": "./src/universal/components/Header/index.tsx",
+      "name": "./src/universal/components/Header/index.tsx",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
+      "id": "./src/universal/components/Header/index.tsx",
+      "name": "./src/universal/components/Header/index.tsx",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -815,20 +1009,6 @@
     {
       "id": "./node_modules/axios/lib/helpers/spread.js",
       "name": "./node_modules/axios/lib/helpers/spread.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "./../../process/browser.js": [
-    {
-      "id": "./node_modules/process/browser.js",
-      "name": "./node_modules/process/browser.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/process/browser.js",
-      "name": "./node_modules/process/browser.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -1281,20 +1461,6 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./../../webpack/buildin/harmony-module.js": [
-    {
-      "id": "./node_modules/webpack/buildin/harmony-module.js",
-      "name": "./node_modules/webpack/buildin/harmony-module.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/webpack/buildin/harmony-module.js",
-      "name": "./node_modules/webpack/buildin/harmony-module.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
   "./ponyfill.js": [
     {
       "id": "./node_modules/symbol-observable/es/ponyfill.js",
@@ -1393,7 +1559,7 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "react-router/matchPath": [
+  "./matchPath": [
     {
       "id": "./node_modules/react-router/matchPath.js",
       "name": "./node_modules/react-router/matchPath.js",
@@ -1401,8 +1567,20 @@
       "publicPath": "/static/js/main.js"
     },
     {
+      "id": "./node_modules/react-router-dom/es/matchPath.js",
+      "name": "./node_modules/react-router-dom/es/matchPath.js",
+      "file": "main.js",
+      "publicPath": "/static/js/main.js"
+    },
+    {
       "id": "./node_modules/react-router/matchPath.js",
       "name": "./node_modules/react-router/matchPath.js",
+      "file": "main.js.map",
+      "publicPath": "/static/js/main.js.map"
+    },
+    {
+      "id": "./node_modules/react-router-dom/es/matchPath.js",
+      "name": "./node_modules/react-router-dom/es/matchPath.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -1603,20 +1781,6 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./matchPath": [
-    {
-      "id": "./node_modules/react-router-dom/es/matchPath.js",
-      "name": "./node_modules/react-router-dom/es/matchPath.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/react-router-dom/es/matchPath.js",
-      "name": "./node_modules/react-router-dom/es/matchPath.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
   "./withRouter": [
     {
       "id": "./node_modules/react-router-dom/es/withRouter.js",
@@ -1641,20 +1805,6 @@
     {
       "id": "./node_modules/react-router/es/withRouter.js",
       "name": "./node_modules/react-router/es/withRouter.js",
-      "file": "main.js.map",
-      "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "hoist-non-react-statics": [
-    {
-      "id": "./node_modules/hoist-non-react-statics/index.js",
-      "name": "./node_modules/hoist-non-react-statics/index.js",
-      "file": "main.js",
-      "publicPath": "/static/js/main.js"
-    },
-    {
-      "id": "./node_modules/hoist-non-react-statics/index.js",
-      "name": "./node_modules/hoist-non-react-statics/index.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -2015,7 +2165,7 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./components/connectAdvanced": [
+  "../components/connectAdvanced": [
     {
       "id": "./node_modules/react-redux/es/components/connectAdvanced.js",
       "name": "./node_modules/react-redux/es/components/connectAdvanced.js",
@@ -3343,16 +3493,16 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./modules/es6.math.trunc": [
+  "babel-polyfill": [
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
+      "id": "./node_modules/babel-polyfill/lib/index.js",
+      "name": "./node_modules/babel-polyfill/lib/index.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
-      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.math.trunc.js",
+      "id": "./node_modules/babel-polyfill/lib/index.js",
+      "name": "./node_modules/babel-polyfill/lib/index.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -3427,16 +3577,16 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "babel-polyfill": [
+  "./modules/es6.string.ends-with": [
     {
-      "id": "./node_modules/babel-polyfill/lib/index.js",
-      "name": "./node_modules/babel-polyfill/lib/index.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
       "file": "main.js",
       "publicPath": "/static/js/main.js"
     },
     {
-      "id": "./node_modules/babel-polyfill/lib/index.js",
-      "name": "./node_modules/babel-polyfill/lib/index.js",
+      "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
+      "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.string.ends-with.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
     }
@@ -4141,7 +4291,7 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./modules/es6.map": [
+  "./es6.map": [
     {
       "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.map.js",
       "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.map.js",
@@ -4155,7 +4305,7 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./modules/es6.set": [
+  "./es6.set": [
     {
       "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.set.js",
       "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.set.js",
@@ -4169,7 +4319,7 @@
       "publicPath": "/static/js/main.js.map"
     }
   ],
-  "./modules/es6.weak-map": [
+  "./es6.weak-map": [
     {
       "id": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.weak-map.js",
       "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/es6.weak-map.js",
@@ -6855,20 +7005,6 @@
       "name": "./node_modules/babel-polyfill/node_modules/core-js/modules/_enum-keys.js",
       "file": "main.js.map",
       "publicPath": "/static/js/main.js.map"
-    }
-  ],
-  "../pages/movie": [
-    {
-      "id": "./src/universal/pages/movie/index.tsx",
-      "name": "./src/universal/pages/movie/index.tsx",
-      "file": "movie.js",
-      "publicPath": "/static/js/movie.js"
-    },
-    {
-      "id": "./src/universal/pages/movie/index.tsx",
-      "name": "./src/universal/pages/movie/index.tsx",
-      "file": "movie.js.map",
-      "publicPath": "/static/js/movie.js.map"
     }
   ]
 }
