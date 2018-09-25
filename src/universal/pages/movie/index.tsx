@@ -7,24 +7,25 @@ import { RouteComponentProps } from 'react-router-dom'
 import { IState } from "../../models";
 import { getMovie } from '../../actions'
 
+
+type RouteParams = { id: string }
 type MapStateToProps = ReturnType<typeof mapStateToProps>;
 type MapDispatchToProps = ReturnType<typeof mapDispatchToProps>;
-interface IMovieOwnProps extends RouteComponentProps<undefined> {}
+interface IMovieOwnProps extends RouteComponentProps<RouteParams>, React.Props<RouteParams> {}
 interface IMovieProps extends MapStateToProps, MapDispatchToProps, IMovieOwnProps {}
 
 
 class Movie extends React.Component<IMovieProps, {}> {
 
     componentDidMount() {
-      this.props.getMovie(this.props.match.params.id);
+      this.props.getMovie(this.props.match.params.id.split('-')[0]);
     }
 
-    render() {
-      console.log(this.props.movieData.data)
+    render(): JSX.Element {
         return (
             <div>
               <Helmet>
-                <title>Title of the selected movie</title>
+                <title>{this.props.movieData.data.title}</title>
               </Helmet>
               <h1>Movie</h1>
               <p>{this.props.movieData.data.title}</p>
@@ -32,6 +33,7 @@ class Movie extends React.Component<IMovieProps, {}> {
             </div>
         );
     }
+
 }
 
 const mapStateToProps = (state: IState, ownProps: IMovieOwnProps) =>

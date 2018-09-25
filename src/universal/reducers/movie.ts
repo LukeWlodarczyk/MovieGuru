@@ -7,6 +7,8 @@ import {
     FETCH_COMMENTS_SUCCESS
 } from "../constants/types";
 
+import { IMovieState } from '../models';
+
 
 const initialState = {
     isLoading: false,
@@ -14,7 +16,7 @@ const initialState = {
     data: {},
 };
 
-export default (state = initialState, action) => {
+export default (state = initialState, action):IMovieState => {
     switch (action.type) {
         case FETCH_MOVIE_REQUEST:
             return {

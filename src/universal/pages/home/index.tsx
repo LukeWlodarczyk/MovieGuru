@@ -2,12 +2,12 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet'
 import { Dispatch } from 'redux';
-import { Link, RouteComponentProps } from "react-router-dom";
-import { loadMovie } from '../../loadable';
+import { RouteComponentProps } from "react-router-dom";
 
-
-import { IState } from "../../models";
+import { IState, IMovie } from "../../models";
 import { getMovies } from '../../actions'
+
+import MovieCard from '../../components/movieCard';
 
 type MapStateToProps = ReturnType<typeof mapStateToProps>;
 type MapDispatchToProps = ReturnType<typeof mapDispatchToProps>;
@@ -28,12 +28,9 @@ class Home extends React.Component<IHomeProps, {}> {
               <title>MovieGuru => Find movie for tonight!</title>
             </Helmet>
             <h1>Home</h1>
-            {this.props.moviesData.data.map((movie: { title: string, _id: string}) => {
-              return (
-                <Link key={movie._id} onMouseOver={loadMovie} to={`/movies/${movie._id}`}>
-                  <p>{movie.title}</p>
-                </Link>)
-            })}
+            {this.props.moviesData.data.map((movie: IMovie, idx: number) => (
+                <MovieCard key={movie.imdbID} { ...{ ...movie, idx } }  />
+            ))}
         </section>
     );
   }
