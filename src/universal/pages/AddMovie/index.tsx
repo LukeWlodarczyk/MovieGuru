@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet'
 import { Dispatch } from 'redux';
 import { Link, RouteComponentProps } from "react-router-dom";
-import { loadMovie } from '../../loadable';
 
 
 import { IState } from "../../models";
-import { getMovies } from '../../actions'
 
 type MapStateToProps = ReturnType<typeof mapStateToProps>;
 type MapDispatchToProps = ReturnType<typeof mapDispatchToProps>;
@@ -16,17 +14,15 @@ interface IHomeProps extends MapStateToProps, MapDispatchToProps, IHomeOwnProps 
 
 class AddMovie extends React.Component<IHomeProps, {}> {
 
-
-  render() {
-
+  render(): JSX.Element {
 
     return (
-        <section>
+        <div>
             <Helmet>
               <title>MovieGuru => Find movie for tonight!</title>
             </Helmet>
             <h1>Add movie</h1>
-        </section>
+        </div>
     );
   }
 }
