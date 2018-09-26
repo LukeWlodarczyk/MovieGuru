@@ -1,5 +1,6 @@
 # MovieGuru
 
+Site is published at: https://movieguru-luke.herokuapp.com/
 
 ## Technologies
 
