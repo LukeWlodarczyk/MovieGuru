@@ -4,7 +4,7 @@ import { Dispatch } from 'redux';
 import { connect } from "react-redux";
 import { RouteComponentProps } from 'react-router-dom'
 
-import { IState } from "../../models";
+import { IState, IMovie, IMovieState } from "../../models";
 import { getMovie } from '../../actions'
 
 
@@ -18,6 +18,8 @@ interface IMovieProps extends MapStateToProps, MapDispatchToProps, IMovieOwnProp
 class Movie extends React.Component<IMovieProps, {}> {
 
     componentDidMount() {
+      !this.props.existsInList &&
+      !this.props.alreadyFetched &&
       this.props.getMovie(this.props.match.params.id.split('-')[0]);
     }
 
@@ -36,14 +38,29 @@ class Movie extends React.Component<IMovieProps, {}> {
 
 }
 
-const mapStateToProps = (state: IState, ownProps: IMovieOwnProps) =>
-({ movieData: state.movie });
-
+const mapStateToProps = (state: IState, ownProps: IMovieOwnProps) => {
+  const alreadyFetched: boolean = state.movie.data._id === ownProps.match.params.id.split('-')[0];
+  const movieDataFromList: IMovieState = {
+    data: state.movies.data[ownProps.match.params.id.split('-')[1]] as IMovie,
+    isLoading: false as boolean,
+    isError: false as boolean,
+  };
+  const existsInList: boolean = !!movieDataFromList.data
+  return ({
+      movieData: alreadyFetched
+                    ? state.movie
+                    : existsInList
+                        ? movieDataFromList
+                        : state.movie as IMovieState,
+      existsInList,
+      alreadyFetched
+   })
+};
 
 const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: IMovieOwnProps) => ({
     getMovie: id => dispatch<any>(getMovie(id))
 });
 
-export const fetchMovie = (dispatch, param) => dispatch(getMovie(param))
+export const fetchMovie = (dispatch, param) => dispatch(getMovie(param.split('-')[0]))
 
 export default connect<MapStateToProps, MapDispatchToProps, IMovieOwnProps, IState>(mapStateToProps, mapDispatchToProps)(Movie);

@@ -17,12 +17,12 @@ interface IHomeProps extends MapStateToProps, MapDispatchToProps, IHomeOwnProps 
 class Home extends React.Component<IHomeProps, {}> {
 
   componentDidMount() {
-    this.props.getMovies()
+    !this.props.prefetched && this.props.getMovies();
   }
 
-  render() {
+  render(): JSX.Element {
     return (
-        <section>
+        <div>
             <Helmet>
               <title>MovieGuru => Find movie for tonight!</title>
             </Helmet>
@@ -30,13 +30,13 @@ class Home extends React.Component<IHomeProps, {}> {
             {this.props.moviesData.data.map((movie: IMovie, idx: number) => (
                 <MovieCard key={movie.imdbID} { ...{ ...movie, idx } }  />
             ))}
-        </section>
+        </div>
     );
   }
 }
 
 const mapStateToProps = (state: IState, ownProps: IHomeOwnProps) =>
-({ moviesData: state.movies });
+({ moviesData: state.movies, prefetched: !!state.movies.data.length as boolean });
 
 
 const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: IHomeOwnProps) => ({
