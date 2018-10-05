@@ -1,5 +1,7 @@
 # MovieGuru
 
+Project still in progress...
+
 Site is published at: https://movieguru-luke.herokuapp.com/
 
 ## Technologies
@@ -175,6 +177,3 @@ I have some bug and I have to delete
 
 in `src/server/app.ts` file in order to make tests work correctly.
 I'm not sure how to fix it. Sorry for that :/
-
-
-### Project still in progress...
