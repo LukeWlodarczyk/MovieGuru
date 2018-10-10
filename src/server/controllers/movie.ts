@@ -18,7 +18,7 @@ export class MovieController{
 
     public getMovies = async (req: GetMoviesReq, res: Response):Promise<Response> => {
 
-      const movies: object[] = await Movie
+      const movies: Movie[] = await Movie
                                         .find(req.filters)
                                         .skip(req.pagination.offset)
                                         .limit(req.pagination.per_page)
@@ -36,7 +36,7 @@ export class MovieController{
 
     public addMovie = async (req: Request, res: Response):Promise<Response> => {
 
-      const { errors, isValid } = validateMovieTitle(req.body);
+      const { errors, isValid }: { errors: object, isValid: boolean } = validateMovieTitle(req.body);
 
       if (!isValid) {
         return res
@@ -60,7 +60,7 @@ export class MovieController{
                  });
      }
 
-      const movie = await Movie.findOne({ imdbID: resp.data.imdbID });
+      const movie: Movie = await Movie.findOne({ imdbID: resp.data.imdbID });
 
       if(movie) {
           return res
@@ -73,7 +73,7 @@ export class MovieController{
       }
 
       const { response, ...movieData } = prepareDataToSave(resp.data);
-      const createdMovie = await Movie.create(movieData);
+      const createdMovie: Movie = await Movie.create(movieData);
 
       return res
               .status(201)
@@ -87,9 +87,9 @@ export class MovieController{
 
     public getMovie = async (req: Request, res: Response):Promise<Response> => {
 
-      const id:string = req.params.id;
+      const id: string = req.params.id;
 
-      const isValidId:boolean = mongoose.Types.ObjectId.isValid(id);
+      const isValidId: boolean = mongoose.Types.ObjectId.isValid(id);
 
       if(!isValidId) {
         return res
@@ -101,7 +101,7 @@ export class MovieController{
                 });
       }
 
-      const movie = await Movie.findById(id);
+      const movie: Movie = await Movie.findById(id);
 
       if(!movie) {
         return res
