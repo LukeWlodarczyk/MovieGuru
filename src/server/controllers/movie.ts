@@ -18,7 +18,7 @@ export class MovieController{
 
     public getMovies = async (req: GetMoviesReq, res: Response):Promise<Response> => {
 
-      const movies: Movie[] = await Movie
+      const movies: object[] = await Movie
                                         .find(req.filters)
                                         .skip(req.pagination.offset)
                                         .limit(req.pagination.per_page)
@@ -60,7 +60,7 @@ export class MovieController{
                  });
      }
 
-      const movie: Movie = await Movie.findOne({ imdbID: resp.data.imdbID });
+      const movie = await Movie.findOne({ imdbID: resp.data.imdbID });
 
       if(movie) {
           return res
@@ -73,7 +73,7 @@ export class MovieController{
       }
 
       const { response, ...movieData } = prepareDataToSave(resp.data);
-      const createdMovie: Movie = await Movie.create(movieData);
+      const createdMovie: object = await Movie.create(movieData);
 
       return res
               .status(201)
@@ -101,7 +101,7 @@ export class MovieController{
                 });
       }
 
-      const movie: Movie = await Movie.findById(id);
+      const movie = await Movie.findById(id);
 
       if(!movie) {
         return res
