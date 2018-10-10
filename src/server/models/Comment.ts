@@ -6,9 +6,13 @@ const CommentSchema = new mongoose.Schema({
         required: true,
     },
     movieId: {
-        type: String,
-        required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'movies',
     },
+    authorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'users',
+    }
 },
 {
     timestamps: {},

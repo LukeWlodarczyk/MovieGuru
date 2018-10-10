@@ -79,6 +79,10 @@ const MovieSchema = new mongoose.Schema({
     },
     imdbVotes: {
         type: Number,
+    },
+    addedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'users',
     }
 },
 {
