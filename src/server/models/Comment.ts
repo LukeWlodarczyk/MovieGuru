@@ -1,15 +1,24 @@
-import * as mongoose from 'mongoose';
+import * as mongoose from "mongoose";
 
-const CommentSchema = new mongoose.Schema({
+
+export interface IUserDocument extends mongoose.Document {
+  text: string;
+  movie: string;
+  author: string;
+}
+
+export interface IUserModel extends mongoose.Model<IUserDocument> {}
+
+const CommentSchema: mongoose.Schema = new mongoose.Schema({
     text: {
         type: String,
         required: true,
     },
-    movieId: {
+    movie: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'movies',
     },
-    authorId: {
+    author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'users',
     }
@@ -18,4 +27,6 @@ const CommentSchema = new mongoose.Schema({
     timestamps: {},
 });
 
-export default mongoose.model('comments', CommentSchema);
+export const Comment = mongoose.model<IUserDocument, IUserModel>('comments', CommentSchema);
+
+export default Comment;
