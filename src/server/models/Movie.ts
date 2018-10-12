@@ -1,92 +1,108 @@
-import * as mongoose from 'mongoose';
+import * as mongoose from "mongoose";
 
-const MovieSchema = new mongoose.Schema({
+import  { IMovieType } from '../../universal/models';
+
+export interface IMovieDocument extends mongoose.Document, IMovieType {}
+
+export interface IMovieModel extends mongoose.Model<IMovieDocument> {}
+
+const MovieSchema: mongoose.Schema = new mongoose.Schema(
+  {
     title: {
-        type: String,
+      type: String
     },
     type: {
-        type: String,
+      type: String
     },
     director: {
-        type: [String],
+      type: [String]
     },
     genre: {
-        type: [String],
+      type: [String]
     },
     language: {
-        type: [String],
+      type: [String]
     },
     production: {
-        type: String,
+      type: String
     },
     country: {
-        type: [String],
+      type: [String]
     },
     actors: {
-        type: [String],
+      type: [String]
     },
     released: {
-        type: String,
+      type: String
     },
     plot: {
-        type: String,
+      type: String
     },
     poster: {
-        type: String,
+      type: String
     },
     dvd: {
-        type: String,
+      type: String
     },
     awards: {
-        type: String,
+      type: String
     },
     boxOffice: {
-        type: Number,
+      type: Number
     },
     metascore: {
-        type: String,
+      type: String
     },
     rated: {
-        type: String,
+      type: String
     },
     ratings: [
-        {
-            source: {
-                type: String,
-            },
-            value: {
-                type: String,
-            },
+      {
+        source: {
+          type: String
+        },
+        value: {
+          type: String
         }
+      }
     ],
     runtime: {
-        type: Number,
+      type: Number
     },
     writer: {
-        type: [String],
+      type: [String]
     },
     year: {
-        type: Number,
+      type: Number
     },
     website: {
-        type: String,
+      type: String
     },
     imdbID: {
-        type: String,
+      type: String
     },
     imdbRating: {
-        type: Number,
+      type: Number
     },
     imdbVotes: {
-        type: Number,
+      type: Number
     },
+    comments: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "comments"
+      }
+    ],
     addedBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'users',
+      ref: "users"
     }
-},
-{
-    timestamps: {},
-});
+  },
+  {
+    timestamps: {}
+  }
+);
 
-export default mongoose.model('movies', MovieSchema);
+export const Movie = mongoose.model<IMovieDocument, IMovieModel>("movies", MovieSchema);
+
+export default Movie;
