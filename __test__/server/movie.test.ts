@@ -239,3 +239,24 @@ describe('POST /api/v1/movies', () => {
 
 
 })
+
+
+describe('DELETE /api/v1/movies/id', () => {
+
+  it('should delete movie with provided id', (done) => {
+    Movie
+      .create({})
+      .then(movie => {
+        chai
+          .request(app.default)
+          .del(`/api/v1/movies${movie.id}`)
+          .end((err, res) => {
+            expect(res.body.success).to.be.true;
+             expect(res.status).to.eql(200);
+             expect(res.body.data.id).to.be.an(movie.id)
+             done()
+           });
+      })
+  })
+
+})
