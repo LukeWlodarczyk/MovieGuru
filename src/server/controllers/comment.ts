@@ -7,7 +7,7 @@ const Movie = mongoose.model('movies');
 import { validateComment } from '../validation';
 
 interface Opts {
-  id?: string
+  movieId?: string
 }
 
 export class CommentController{
@@ -16,7 +16,10 @@ export class CommentController{
       const opts: Opts = req.query;
 
       for(const key in opts) {
-           if (key !== 'movieId') opts[key] = undefined;
+           if (key === 'movieId') {
+             opts['movie'] = opts['movieId'];
+             delete opts['movieId'];
+           } else opts[key] = undefined;
        }
 
       const comments = await Comment.find(opts);
@@ -60,7 +63,7 @@ export class CommentController{
 
       const comment = await Comment.create({
           text: req.body.text,
-          movieId: id,
+          movie: movie.id,
       });
 
       return res
