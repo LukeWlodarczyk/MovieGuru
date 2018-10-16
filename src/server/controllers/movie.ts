@@ -48,7 +48,7 @@ export class MovieController{
                 })
       }
 
-     const resp: AxiosResponse = await axios.get(`${baseUrl}/${apiKey}&type=movie&t=${req.body.title.replace(' ', '_')}`);
+     const resp: AxiosResponse = await axios.get(`${baseUrl}/${apiKey}&type=movie&t=${req.body.title.replace(/ /g, '_')}`);
 
      if(resp.data.Response === 'False') {
          return res
