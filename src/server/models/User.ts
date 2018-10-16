@@ -34,7 +34,7 @@ UserSchema.pre<IUserDocument>("save", function(next): any {
   bcrypt.hash(
     this.password,
     10,
-    (err, hash): void => {
+    (err, hash: string): void => {
       if (err) return next(err);
       this.password = hash;
       next();
@@ -43,10 +43,11 @@ UserSchema.pre<IUserDocument>("save", function(next): any {
 });
 
 UserSchema.methods.comparePassword = async function comparePassword(
-  candidatePassword
+  candidatePassword: string
 ) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
+
 
 export const User: IUserModel = model<IUser, IUserModel>("users", UserSchema);
 
