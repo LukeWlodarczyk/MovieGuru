@@ -31,9 +31,9 @@ describe('GET /api/v1/comments', () => {
   it('should return all comments with provided movieId', (done) => {
 
     const promises = [
-      Comment.create({ text: 'Hello!', movieId: '5ba4304f6cccb81a9ebc6bdb' }),
-      Comment.create({ text: 'Hello!', movieId: '5ba4304f6cccb81a9ebc6bdb' }),
-      Comment.create({ text: 'Hello!', movieId: '5ba4304f6cccbasdf768asdf' })
+      Comment.create({ text: 'Hello!', movie: '5bc64a6066a80a360991af09' }),
+      Comment.create({ text: 'Hello!', movie: '5bc64a6066a80a360991af09' }),
+      Comment.create({ text: 'Hello!', movie: '5ba7e70111abf10c82e67189' })
     ]
 
     Promise
@@ -41,12 +41,13 @@ describe('GET /api/v1/comments', () => {
       .then(()=> {
         chai
           .request(app.default)
-          .get('/api/v1/comments/?movieId=5ba4304f6cccb81a9ebc6bdb')
+          .get('/api/v1/comments/?movieId=5bc64a6066a80a360991af09')
           .end((err, res) => {
              expect(res.status).to.eql(200);
              expect(res.body.data).to.be.an('array');
-             expect(res.body.data[0].movieId).to.be.eql('5ba4304f6cccb81a9ebc6bdb');
-             expect(res.body.data[1].movieId).to.be.eql('5ba4304f6cccb81a9ebc6bdb');
+             console.log(res.body.data)
+             expect(res.body.data[0].movie).to.be.eql('5bc64a6066a80a360991af09');
+             expect(res.body.data[1].movie).to.be.eql('5bc64a6066a80a360991af09');
              expect(res.body.data).to.have.lengthOf(2);
              done()
            });
@@ -123,7 +124,7 @@ describe('POST /api/v1/comments', () => {
              expect(res.body.success).to.be.true;
              expect(res.body.message).to.eql('Comment successfully created.');
              expect(res.body.data.text).to.eql('Awsome');
-             expect(res.body.data.movieId).to.eql(movie.id);
+             expect(res.body.data.movie).to.eql(movie.id);
              done()
            });
       })
